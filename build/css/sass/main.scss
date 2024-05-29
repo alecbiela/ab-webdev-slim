@@ -1,13 +1,14 @@
-@import "./reset.css";
-@import "./pico.min.css";
-@import "./pico-colors.css";
-@import "./typography.css";
+@use './reset';
+@use './pico/pico';
+@use './pico-colors';
+@use './typography';
 
 #theme_switcher svg{
     width: 30px;
     height: 30px;
     color: var(--pico-contrast);
 }
+
 @keyframes logo{
     0%{transform: rotate3d(0,1,0,0deg);}
     25%{transform: rotate3d(0,1,0,90deg);}
@@ -15,6 +16,7 @@
     75%{transform: rotate3d(0,1,0,270deg);}
     100%{transform: rotate3d(0,1,0,360deg);}
 }
+
 .logo-lockup{display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center;
     .logomark{
         color: white;

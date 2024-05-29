@@ -20,7 +20,7 @@ window.onload = (() => {
             switchTheme.blur();
         },timeInt);
     };
-
+    
     switchTheme.innerHTML = os_default;
     switchTheme.setAttribute('data-tooltip', 'Auto Theme');
     switchTheme.focus();
