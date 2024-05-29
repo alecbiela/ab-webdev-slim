@@ -1,6 +1,5 @@
 @use './reset';
 @use './pico/pico';
-@use './pico-colors';
 @use './typography';
 
 #theme_switcher svg{
@@ -175,6 +174,33 @@
             
         }
     }
+
+    .academic-work{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .academic-work-item{
+            text-align: left;
+            margin: 0;
+            padding: 7px 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--pico-color);
+            &:last-child{border-bottom: none;}
+            .btn-group{
+                text-align: right;
+                padding-left: 15px;
+                a{
+                    padding: 10px 15px;
+                    text-align: center;
+                }
+            }
+
+        }
+    }
 }
 
 .cta{
@@ -202,11 +228,24 @@
         margin: auto;
         width: 100%;
     }
-    .projects .experience-wrapper{
-        grid-template-columns: 1fr; 
-        row-gap: 12px;
-    }
-    .projects .projects-grid{
-        grid-template-columns: 1fr;
+    .projects{
+        .experience-wrapper{
+            grid-template-columns: 1fr; 
+            row-gap: 12px;
+        }
+        .projects-grid{
+            grid-template-columns: 1fr;
+        }
+
+        .academic-work{
+            .academic-work-item{
+                span{font-weight: bold; line-height: initial;
+                    small{font-weight: normal;}
+                }
+                .btn-group{
+                    a{margin-bottom: 5px;}
+                }
+            }
+        }
     }
 }

@@ -12,8 +12,13 @@ html {
     font-variation-settings:
         "wdth" 100,
         "YTLC" 500;
-    background-color: var(--pico-background);
-    color: var(--pico-contrast);
+
+    main{padding-block: 0;
+        .container{
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
 }
 
 .sr{
@@ -40,11 +45,6 @@ h2.bars{
     }
     &::before{left: -20px;}
     &::after{right: -50px;}
-}
-
-main .container{
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 @media(max-width: 767px){
