@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -7,47 +7,45 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
         <link href="./css/main.min.css" rel="stylesheet" type="text/css" />
         <title>Alec Bielanos | Web Developer</title>
-        <style type="text/css">
-            .hero{
-                -webkit-background-image: image-set(
-                    url("https://picsum.photos/3840/2160") 4x,
-                    url("https://picsum.photos/2560/1440") 2x,
-                    url("https://picsum.photos/1920/1080") 1x
-                );
-                background-image: image-set(
-                    url("https://picsum.photos/3840/2160") 4x,
-                    url("https://picsum.photos/2560/1440") 2x,
-                    url("https://picsum.photos/1920/1080") 1x
-                );
-            }
-        </style>
     </head>
     <body>
         <header>
-            <nav class="container">
+            <nav title="Main">
                 <ul>
-                    <li class="logo-lockup"><span class="logomark" aria-hidden="true"><span>A</span><span>B</span><span>W</span><span>D</span></span><span class="logo-text">Alec Bielanos | Web Developer</span></li>
+                    <li class="logo-lockup"><span class="logo-text">Alec Bielanos | Web Developer</span></li>
                 </ul>
-                <ul>
-                    <li><a href="#" id="theme_switcher"></a></li>
+                <button id="nav_toggle" aria-controls="nav_items" aria-expanded="false" role="dropdown"><i class="bi bi-list" aria-hidden="true"></i><span class="sr">Toggle Navigation</span></button>
+                <ul id="nav_items">
+                    <li><a href="#section_about">About</a></li>
+                    <li><a href="#section_resume">Work</a></li>
+                    <li><a href="#section_academics">Academics</a></li>
+                    <li><a href="#section_projects">Projects</a></li>
+                    <li><a href="#section_contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <div class="hero">
-                <h1>Innovating the next generation of <span class="rotator"></span></h1>
+                <h1><span>Innovating the next generation of</span>
+                    <span class="rotator">
+                        <span class="slot1">interaction.</span>
+                        <span class="slot2">what&apos;s possible.</span>
+                        <span class="slot3">user experience.</span>
+                        <span class="slot4">eLearning.</span>
+                    </span>
+                </h1>
             </div>
-            <div class="container about">
+            <div id="section_about" class="container about">
                 <div class="about-image-wrapper">
                     <img class="headshot" src="img/headshot_feb24.png" alt="An image of Alec" />
                 </div>
                 <div class="about-text-wrapper">
-                    <h2>Hi, I'm Alec!</h2>
+                    <h2>Hi, I&apos;m Alec!</h2>
                     <p>I&apos;m a seasoned full-stack web developer and recent Master&apos;s graduate experienced with working in interdisciplinary teams &mdash; most often, my role requires translating business and functional requirements into product features and then designing/developing them (or both!). My previous work experience and education has allowed me to develop strong communication and organizational skills which are so often required in fast-pace environments.</p>
                     <p>My academic and personal portfolios span multiple technologies and industries. From websites to research, health informatics to geographic imaging, nothing is really &apos;off the table&apos; for what I&apos;m interested in. I like to remain somewhat technology-agnostic; as a proactive self-starter I&apos;m open to learning new technologies and adapting to them quickly.</p>
                 </div>
             </div>
-            <div class="container resume">
+            <div id="section_resume" class="container resume">
                 <h2 class="bars">My Stack</h2>
                 <p>The technologies you might find me using in my professional and personal projects.</p>
                     <ul class="stack-key">
@@ -145,7 +143,7 @@
                         <p>Instructed students ages 12 to 17 on introductory to advanced concepts in both the C++ and Java programming languages.  Worked closely with other instructors, Health and Safety coordinator, and Camp Director to ensure a safe and fun learning environment for children ages 6 to 17.</p>
                     </div>
                 </div>
-                <h3>Education</h3>
+                <h3 id="section_academics">Education</h3>
                 <div class="education-wrapper">
                     <div class="edu-card">
                         <h4>Rochester Institute of Technology</h4>
@@ -230,29 +228,29 @@
                     <li class="academic-work-item">
                         <span>Research Proposal: Evaluating Gamified e-Learning Experiences for Increases in Perceived Enjoyment<br/><small>A Proposal for Future Research.</small></span>
                         <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Evaluating_Gamified_eLearning_for_Enjoyment.pdf" target="_blank" data-tooltip="View Story"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Research Proposal PDF in a new tab.</span></a>
+                            <a role="button" href="project/Bielanos_Evaluating_Gamified_eLearning_for_Enjoyment.pdf" target="_blank" data-tooltip="View PDF"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Research Proposal PDF in a new tab.</span></a>
                         </div>
                     </li>
                     <li class="academic-work-item">
                         <span>[Group] Workplace Research: Attitudes Toward Hybrid Work and Its Effect on Productivity<br/><small>A Qualitative Interview Study.</small></span>
                         <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Attitudes_Toward_Work_Productivity.pdf" target="_blank" data-tooltip="View Story"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Qualitative Interview Study PDF in a new tab.</span></a>
+                            <a role="button" href="project/Bielanos_Attitudes_Toward_Work_Productivity.pdf" target="_blank" data-tooltip="View PDF"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Qualitative Interview Study PDF in a new tab.</span></a>
                         </div>
                     </li>
                     <li class="academic-work-item">
                         <span>[Group] Workplace Research: Hybrid, Remote and On-site: An Analysis of Attitudes and Perceptions About Work Environments<br/><small>A Quantitative Study using Surveys and Statistical Analysis.</small></span>
                         <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Perceptions_of_Hybrid_Remote_Work.pdf" target="_blank" data-tooltip="View Story"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Quantitative Survey Study PDF in a new tab.</span></a>
+                            <a role="button" href="project/Bielanos_Perceptions_of_Hybrid_Remote_Work.pdf" target="_blank" data-tooltip="View PDF"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Quantitative Survey Study PDF in a new tab.</span></a>
                         </div>
                     </li>
                     <li class="academic-work-item">
                         <span>[Group] Workplace Research: Office Distractions &mdash; An Experimental Study to Determine if Auditory Noises Impact Task Performance<br/><small>An Experimental Study and Related Statistical Analysis.</small></span>
                         <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Auditory_Distractions_Work_Performance.pdf" target="_blank" data-tooltip="View Story"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Experimental Study PDF in a new tab.</span></a>
+                            <a role="button" href="project/Bielanos_Auditory_Distractions_Work_Performance.pdf" target="_blank" data-tooltip="View PDF"><i class="bi bi-file-earmark-richtext" aria-hidden="true"></i><span class="sr">View Experimental Study PDF in a new tab.</span></a>
                         </div>
                     </li>
                 </ul>
-                <h3>Personal Projects</h3>
+                <h3 id="section_projects">Personal Projects</h3>
                 <div class="projects-grid">
                     <article class="project-wrapper">
                         <header>
@@ -316,7 +314,7 @@
                     </article>
                 </div>
             </div>
-            <div class="cta">
+            <div id="section_contact" class="cta">
                 <div class="container">
                     <h2 class="text-center">Connect With Me</h2>
                     <p class="text-center">Let&apos;s see what we can create together.</p>

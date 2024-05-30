@@ -1,6 +1,7 @@
 window.onload = (() => {
     'use strict';
 
+    /* -- Removed light/dark mode switching for now --
     let isLight = !(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     const html = document.documentElement;
     const switchTheme = document.getElementById('theme_switcher');
@@ -25,6 +26,7 @@ window.onload = (() => {
     switchTheme.setAttribute('data-tooltip', 'Auto Theme');
     switchTheme.focus();
     removeTooltip(3000);
+    */
 
     document.getElementById('social_links_form').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -32,7 +34,7 @@ window.onload = (() => {
         if(document.getElementById('hhpp').value === 'check'){
             switch(e.submitter.id){
                 case 'bt_em':
-                    window.open('mailto:alec.bielanos@gmail.com', '_blank');
+                    window.open('mailto:alec@ab-web.dev', '_blank');
                     break;
                 case 'bt_li':
                     window.open('https://www.linkedin.com/in/alec-bielanos/','_blank');
@@ -45,6 +47,31 @@ window.onload = (() => {
 
         return false;
     });
+
+    document.getElementById('nav_toggle').addEventListener('click', (e) => {
+        const isOpen = (e.currentTarget.getAttribute('aria-expanded') === 'true');
+        e.currentTarget.setAttribute('aria-expanded', !isOpen);
+    });
+
+    function smoothScroll(){
+        let x = document.querySelectorAll('a[href*="#"]');
+        for(let i = 0; i < x.length ; i++){
+            x[i].onclick = (e) => {
+                e.preventDefault();
+                const ele = document.querySelector(e.target.hash);
+                window.scrollTo({
+                    top: (ele.offsetTop - 90),
+                    left: 0,
+                    behavior: "smooth",
+                });
+                document.getElementById('nav_toggle').setAttribute('aria-expanded', 'false');
+                ele.focus();
+                return false;
+            };
+        }
+    }
+    smoothScroll();
+    
 
     //honeypot
     document.getElementById('hhpp').value = 'check';

@@ -8,50 +8,123 @@
     color: var(--pico-contrast);
 }
 
-@keyframes logo{
-    0%{transform: rotate3d(0,1,0,0deg);}
-    25%{transform: rotate3d(0,1,0,90deg);}
-    50%{transform: rotate3d(0,1,0,180deg);}
-    75%{transform: rotate3d(0,1,0,270deg);}
-    100%{transform: rotate3d(0,1,0,360deg);}
+@keyframes hero-rotator{
+    0%{transform: rotate3d(1,0,0,0deg);}
+    10%{transform: rotate3d(1,0,0,90deg);}
+    25%{transform: rotate3d(1,0,0,90deg);}
+    35%{transform: rotate3d(1,0,0,180deg);}
+    50%{transform: rotate3d(1,0,0,180deg);}
+    60%{transform: rotate3d(1,0,0,270deg);}
+    75%{transform: rotate3d(1,0,0,270deg);}
+    85%{transform: rotate3d(1,0,0,360deg);}
+    100%{transform: rotate3d(1,0,0,360deg);}
+}
+@keyframes rotator-1{
+    0%{opacity:1;}
+    10%{opacity:0;}
+    25%{opacity:0;}
+    35%{opacity:0;}
+    50%{opacity:0;}
+    60%{opacity:0;}
+    75%{opacity:0;}
+    85%{opacity:1;}
+    100%{opacity:1;}
+}
+@keyframes rotator-2{
+    0%{opacity:0;}
+    10%{opacity:0;}
+    25%{opacity:0;}
+    35%{opacity:0;}
+    50%{opacity:0;}
+    60%{opacity:1;}
+    75%{opacity:1;}
+    85%{opacity:0;}
+    100%{opacity:0;}
+}
+@keyframes rotator-3{
+    0%{opacity:0;}
+    10%{opacity:0;}
+    25%{opacity:0;}
+    35%{opacity:1;}
+    50%{opacity:1;}
+    60%{opacity:0;}
+    75%{opacity:0;}
+    85%{opacity:0;}
+    100%{opacity:0;}
+}
+@keyframes rotator-4{
+    0%{opacity:0;}
+    10%{opacity:1;}
+    25%{opacity:1;}
+    35%{opacity:0;}
+    50%{opacity:0;}
+    60%{opacity:0;}
+    75%{opacity:0;}
+    85%{opacity:0;}
+    100%{opacity:0;}
 }
 
-.logo-lockup{display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center;
-    .logomark{
-        color: white;
-        display: inline-block;
-        font-size: var(--logomark-size);
-        line-height: var(--logomark-size);
-        width: var(--logomark-size);
-        height: var(--logomark-size);
-        font-family: monospace;
-        position: relative;
-        animation-name: logo;
-        animation-duration: 8s;
-        animation-timing-function: steps(8, step-start);
-        animation-iteration-count: infinite;
-        transform-style: preserve-3d;
-        animation-direction: reverse;
-        span{
-            position: absolute; 
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            height: 100%;
-            background: #333;
-            text-align: center;
+body {
+    padding-top: 90px;
+    > header{
+        padding: 10px;
+        height: 90px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background-color: var(--pico-card-background-color);
+
+        nav{
+            position: relative;
+            padding: 0 15px;
+            align-items: center;
+            ul{padding: 0;}
+            #nav_toggle{
+                background: 0 0;
+                border: none;
+                padding: 2px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 30px;
+                transition: all 300ms ease;
+                &:hover, &:focus{background: #333;}
+                &[aria-expanded="true"] {
+                    ~ #nav_items{
+                        transform: translateX(0);
+                        opacity:1;
+                    }
+                    i::before{content: '\f659';}
+                }
+            }
+            #nav_items{
+                position: fixed;
+                top: 90px;
+                right: 0;
+                width: 100%;
+                max-width: 320px;
+                height: calc(100vh - 90px);
+                background: #333;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                transform: translateX(min(320px, 100%));
+                opacity: 0;
+                transition: all 300ms ease;
+
+                a{transition: color 300ms ease;
+                    &:hover, &:focus{color: white;}
+                }
+
+            }
+
         }
-        span:nth-child(1){transform: translateZ(var(--logomark-size-half));}
-        span:nth-child(2){transform: rotateY(90deg) translateZ(var(--logomark-size-half));}
-        span:nth-child(3){transform: rotateY(180deg) translateZ(var(--logomark-size-half));}
-        span:nth-child(4){transform: rotateY(270deg) translateZ(var(--logomark-size-half));}
     }
-    .logo-text{padding-left: var(--logomark-size-half);}
 }
-
 
 .hero{
-    background-position: center;
+    background-position: bottom center;
     background-size: cover;
     height: 70vh;
     position: relative;
@@ -66,7 +139,7 @@
         width: 100%;
         height: 100%;
         background: #000;
-        opacity: 0.7;
+        opacity: 0.5;
         z-index: 1;
     }
 
@@ -79,7 +152,54 @@
         z-index: 2;
         transform: translate(-50%, -50%);
         color: white;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .rotator{
+            position:relative;
+            height: var(--pico-font-size);
+            line-height: var(--pico-font-size);
+            display: inline-block;
+            animation-name: hero-rotator;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            transform-style: preserve-3d;
+            animation-direction: normal;
+            width: 16ch;
+            margin-top: 15px;
+            span{
+                position: absolute; 
+                top: 0; 
+                left: 50%;
+                width: 100%; 
+                height: 100%;
+                text-align: center;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+            .slot1{transform: translate3d(-50%, 0, 26px); opacity: 1; animation-name: rotator-1;}
+            .slot2{transform: rotateX(90deg) translate3d(-50%, 0, 26px); opacity: 0; animation-name: rotator-2;}
+            .slot3{transform: rotateX(180deg) translate3d(-50%, 0, 26px); opacity: 0; animation-name: rotator-3;}
+            .slot4{transform: rotateX(270deg) translate3d(-50%, 0, 26px); opacity: 0; animation-name: rotator-4;}
+        }
     }
+
+    background-image: url("../img/hero.jpg");
+    background-image: -webkit-image-set(
+        url("../img/hero-4x.jpg") 4x,
+        url("../img/hero-2x.jpg") 2x,
+        url("../img/hero.jpg") 1x
+    );
+    background-image: image-set(
+        url("../img/hero-4x.jpg") 4x,
+        url("../img/hero-2x.jpg") 2x,
+        url("../img/hero.jpg") 1x
+    );
+    
 }
 
 .about{

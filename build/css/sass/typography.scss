@@ -10,6 +10,7 @@
 }
 
 html {
+    position: relative;
     font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
     font-variation-settings:
@@ -50,6 +51,17 @@ h2.bars{
     &::after{right: -50px;}
 }
 
+/* Button Styles */
+a[role="button"], button[type="submit"]{
+    background: var(--button-background);
+    border-color: var(--button-background);
+    transition: all 300ms ease;
+    &:hover, &:focus{
+        background: var(--button-active-background);
+        border-color: var(--button-active-background);
+    }
+}
+
 @media(max-width: 767px){
     main .container{
         padding-top: 20px;
@@ -60,15 +72,7 @@ h2.bars{
 /* Light Mode (Auto and Forced) */
 [data-theme=light],
 :root:not([data-theme=dark]) {
-    a[role="button"], button[type="submit"]{
-        background: var(--button-background);
-        border-color: var(--button-background);
-        transition: all 300ms ease;
-        &:hover, &:focus{
-            background: var(--button-active-background);
-            border-color: var(--button-active-background);
-        }
-    }
+
 }
 
 /* Dark Mode (Auto) */
