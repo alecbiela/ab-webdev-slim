@@ -207,6 +207,8 @@
     background: var(--pico-card-background-color);
 }
 
+footer p{margin: 0;}
+
 @media(max-width: 1275px){
     .projects .projects-grid{
         grid-template-columns: 1fr 1fr;
