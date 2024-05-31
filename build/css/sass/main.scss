@@ -1,4 +1,5 @@
 @use './reset';
+@use '../fontello.css';
 @use './pico/pico';
 @use './typography';
 
@@ -77,6 +78,7 @@ body {
         background-color: var(--pico-card-background-color);
 
         nav{
+            height: 100%;
             position: relative;
             padding: 0 15px;
             align-items: center;
@@ -96,7 +98,7 @@ body {
                         transform: translateX(0);
                         opacity:1;
                     }
-                    i::before{content: '\f659';}
+                    i:before{content: '\e80b';}
                 }
             }
             #nav_items{
