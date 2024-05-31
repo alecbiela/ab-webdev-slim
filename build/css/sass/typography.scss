@@ -62,8 +62,8 @@ a[role="button"], button[type="submit"]{
     }
 }
 
-@media(max-width: 767px){
-    main .container{
+@media only screen and (max-width: 767px){
+    html main .container{
         padding-top: 20px;
         padding-bottom: 20px;
     }

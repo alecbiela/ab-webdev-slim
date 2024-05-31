@@ -72,7 +72,7 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         z-index: 10;
         background-color: var(--pico-card-background-color);
 
@@ -316,6 +316,7 @@ body {
                 a{
                     padding: 10px 15px;
                     text-align: center;
+                    .mobile-title{display: none;}
                 }
             }
 
@@ -329,7 +330,7 @@ body {
 
 footer p{margin: 0;}
 
-@media(max-width: 1275px){
+@media only screen and (max-width: 1275px){
     .projects .projects-grid{
         grid-template-columns: 1fr 1fr;
         justify-items: center;
@@ -338,7 +339,7 @@ footer p{margin: 0;}
         }
     }
 }
-@media(max-width: 767px){
+@media only screen and (max-width: 767px){
     h2, h3{text-align: center;}
 
     .about{
@@ -361,11 +362,21 @@ footer p{margin: 0;}
 
         .academic-work{
             .academic-work-item{
+                flex-wrap: wrap;
                 span{font-weight: bold; line-height: initial;
                     small{font-weight: normal;}
                 }
                 .btn-group{
-                    a{margin-bottom: 5px;}
+                    text-align: left;
+                    margin-top: 10px;
+                    padding: 0;
+                    a{
+                        padding: 4px 8px;
+                        margin-bottom: 5px;
+                        &::before{display: none;}
+                        &:first-child{margin-right: 10px;}
+                        .mobile-title{display: inline;}
+                    }
                 }
             }
         }
