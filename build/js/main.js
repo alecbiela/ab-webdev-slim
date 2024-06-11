@@ -34,7 +34,7 @@ window.onload = (() => {
         if(document.getElementById('hhpp').value === 'check'){
             switch(e.submitter.id){
                 case 'bt_em':
-                    window.open('mailto:alec@ab-web.dev', '_blank');
+                    window.open('mailto:alec.bielanos@gmail.com', '_blank');
                     break;
                 case 'bt_li':
                     window.open('https://www.linkedin.com/in/alec-bielanos/','_blank');
