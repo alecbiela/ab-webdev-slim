@@ -224,8 +224,13 @@ body {
 .resume{
     .bars{max-width: 8ch;}
     p{text-align: center;}
+    .stack-grid{display: grid; column-gap: 30px; grid-template-columns: 1fr 1fr 1fr; max-width: 991px; width: 100%; margin: auto;
+    }
+
     .stack-card ul{
         padding: 0;
+        line-height: 120%;
+        li{text-indent: 31px hanging; padding-bottom: 2px;}
     }
     
     i{padding-right: 6px;}
@@ -354,6 +359,7 @@ footer p{margin: 0;}
         margin: auto;
         width: 100%;
     }
+    .resume .stack-grid{grid-template-columns: 1fr 1fr;}
     .projects{
         .experience-wrapper{
             grid-template-columns: 1fr; 
@@ -384,4 +390,7 @@ footer p{margin: 0;}
             }
         }
     }
+}
+@media only screen and (max-width: 576px){
+    .resume .stack-grid{grid-template-columns: 1fr;}
 }
