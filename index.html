@@ -1,468 +1,1009 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMSWER6PJW"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-BMSWER6PJW');
-        </script>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet" />
-        <link href="./css/main.min.css" rel="stylesheet" type="text/css" />
-        <title>Alec Bielanos | Web Developer</title>
-    </head>
-    <body>
-        <header>
-            <nav title="Main">
-                <ul>
-                    <li class="logo-lockup"><span class="logo-text">Alec Bielanos | Web Developer</span></li>
-                </ul>
-                <button id="nav_toggle" aria-controls="nav_items" aria-expanded="false" role="dropdown"><i class="icon-list" aria-hidden="true"></i><span class="sr">Toggle Navigation</span></button>
-                <ul id="nav_items">
-                    <li><a href="#section_about">About</a></li>
-                    <li><a href="#section_resume">Work</a></li>
-                    <li><a href="#section_academics">Academics</a></li>
-                    <li><a href="#section_projects">Projects</a></li>
-                    <li><a href="#section_contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div class="hero">
-                <h1><span>Innovating the next generation of</span>
-                    <span class="rotator">
-                        <span class="slot1">interaction.</span>
-                        <span class="slot2">what&apos;s possible.</span>
-                        <span class="slot3">user experience.</span>
-                        <span class="slot4">eLearning.</span>
-                    </span>
-                </h1>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BMSWER6PJW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-BMSWER6PJW");
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./css/main.min.css" rel="stylesheet" type="text/css" />
+    <title>Alec Bielanos | Web Developer</title>
+  </head>
+  <body @vue:mounted="handleOnMount">
+    <header>
+      <nav title="Main">
+        <ul>
+          <li class="logo-lockup">
+            <span class="logo-text">Alec Bielanos | Web Developer</span>
+          </li>
+        </ul>
+        <button
+          id="nav_toggle"
+          aria-controls="nav_items"
+          :aria-expanded="store.navOpen"
+          role="dropdown"
+          @click="store.navOpen = !store.navOpen"
+        >
+          <i class="icon-list" aria-hidden="true"></i
+          ><span class="sr">Toggle Navigation</span>
+        </button>
+        <ul id="nav_items">
+          <li><a href="#section_about">About</a></li>
+          <li><a href="#section_resume">Work</a></li>
+          <li><a href="#section_academics">Academics</a></li>
+          <li><a href="#section_projects">Projects</a></li>
+          <li><a href="#section_contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="hero">
+        <h1>
+          <span>Innovating the next generation of</span>
+          <span class="rotator">
+            <span class="slot1">interaction.</span>
+            <span class="slot2">what&apos;s possible.</span>
+            <span class="slot3">user experience.</span>
+            <span class="slot4">eLearning.</span>
+          </span>
+        </h1>
+      </div>
+      <div id="section_about" class="container about">
+        <div class="about-image-wrapper">
+          <img
+            class="headshot"
+            src="img/headshot_feb24.jpg"
+            alt="An image of Alec"
+          />
+        </div>
+        <div class="about-text-wrapper">
+          <h2>Hi, I&apos;m Alec!</h2>
+          <p>
+            I&apos;m a seasoned full-stack web developer and recent
+            Master&apos;s graduate experienced with working in interdisciplinary
+            teams &mdash; most often, my role requires translating business and
+            functional requirements into product features and then
+            designing/developing them (or both!). My previous work experience
+            and education has allowed me to develop strong communication and
+            organizational skills which are so often required in fast-pace
+            environments.
+          </p>
+          <p>
+            My academic and personal portfolios span multiple technologies and
+            industries. From websites to research, health informatics to
+            geographic imaging, nothing is really &apos;off the table&apos; for
+            what I&apos;m interested in. I like to remain somewhat
+            technology-agnostic; as a proactive self-starter I&apos;m open to
+            learning new technologies and adapting to them quickly.
+          </p>
+        </div>
+      </div>
+      <div id="section_resume" class="container resume">
+        <h2 class="bars">My Stack</h2>
+        <p>
+          The technologies you might find me using in my professional and
+          personal projects.
+        </p>
+        <ul class="stack-key">
+          <li class="proficient">
+            <i class="icon-check2" aria-hidden="true"></i>Proficient
+          </li>
+          <li class="learning">
+            <i class="icon-dash-lg" aria-hidden="true"></i>Actively Learning
+          </li>
+          <li class="want-to-learn">
+            <i class="icon-question-lg" aria-hidden="true"></i>Highly Motivated
+            to Learn
+          </li>
+        </ul>
+
+        <div class="stack-grid">
+          <article class="stack-card">
+            <header>Frontend Development</header>
+            <ul>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>HTML5, CSS3,
+                JavaScript <small>(ES6&plus;)</small>
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>CSS Preprocessors
+                <br /><small>&lpar;LESS, SASS&rpar;</small>
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>JQuery
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Bootstrap
+                <small>&lpar;2-5&rpar;</small>
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>Vue 3
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>Petite Vue
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>SolidJS
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>React
+              </li>
+            </ul>
+          </article>
+          <article class="stack-card">
+            <header>Frontend Design</header>
+            <ul>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Accessible Web
+                Design (WCAG 2.1)
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Stateless
+                Components
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Heuristic
+                Evaluation
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>CSS Grid
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>Stateful
+                Components
+              </li>
+            </ul>
+          </article>
+          <article class="stack-card">
+            <header>Backend Technologies</header>
+            <ul>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>PHP
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>MySQL/MariaDB
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Zend Framework
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>REST APIs<br /><small
+                  >&lpar;Development, Integration&rpar;</small
+                >
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>Node.js
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i
+                >Laravel<br /><small>&lpar;&plus; Inertia.js&rpar;</small>
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>Symfony
+              </li>
+            </ul>
+          </article>
+          <article class="stack-card">
+            <header>Content Management</header>
+            <ul>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>ConcreteCMS
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>WordPress
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>WP Theme
+                Builders<br /><small>&lpar;Divi, Elementor&rpar;</small>
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>CMS Version
+                Upgrades, Platform Migrations
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>Strapi
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>ApostropheCMS
+              </li>
+            </ul>
+          </article>
+          <article class="stack-card">
+            <header>DevOps</header>
+            <ul>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Cloudflare
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>VPS Hosting<br /><small
+                  >&lpar;DigitalOcean, Vultr&rpar;</small
+                >
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Rackspace
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Plesk
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Apache &plus;
+                Nginx
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>Webmin/Virtualmin
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>AWS
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>Docker
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>CI/CD
+                Pipelines
+              </li>
+            </ul>
+          </article>
+          <article class="stack-card">
+            <header>Workflow</header>
+            <ul>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Grunt
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Slack
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Git/GitHub
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Figma
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Adobe XD
+              </li>
+              <li class="proficient">
+                <i class="icon-check2" aria-hidden="true"></i>Google Suite
+              </li>
+              <li class="learning">
+                <i class="icon-dash-lg" aria-hidden="true"></i>Vite
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>Agile/Scrum
+              </li>
+              <li class="want-to-learn">
+                <i class="icon-question-lg" aria-hidden="true"></i>Webpack
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="container projects">
+        <h2 class="bars">My Work</h2>
+        <p class="text-center">
+          A brief history of my industry experience, academics, and personal
+          projects.
+        </p>
+        <h3 class="sr">Experience</h3>
+        <div class="experience-wrapper">
+          <div class="workplace">
+            <h4>The WORX Group, LLC</h4>
+            <p>Prospect, CT</p>
+          </div>
+          <div>
+            <h5>Developer</h5>
+            <p class="work-time">January 2019 &mdash; July 2021</p>
+            <ul>
+              <li>
+                Created a reusable, responsive, accessible website navigation
+                template inside ConcreteCMS.
+              </li>
+              <li>
+                Managed the audit, CMS updates, and migration of 52 websites to
+                new hosting environments for a large insurance company.
+              </li>
+              <li>
+                Rapidly prepared and implemented solutions to resolve security
+                vulnerabilities.
+              </li>
+              <li>
+                Developed new processes for server initialization for WordPress
+                websites.
+              </li>
+            </ul>
+            <h5>Digital Production Assistant</h5>
+            <p class="work-time">August 2018 &mdash; January 2019</p>
+            <ul>
+              <li>
+                Worked with graphic designers and marketing specialists to
+                develop website improvements given a fixed, limited budget.
+              </li>
+              <li>
+                Translated graphic design mockups in Adobe XD into reusable CMS
+                components (ConcreteCMS blocks) used in the construction of new
+                websites.
+              </li>
+              <li>
+                Wrote scripts to quickly identify outdated hosting, email, and
+                DNS settings across over 150 websites in a shared hosting
+                environment.
+              </li>
+            </ul>
+            <h5>Digital Technology Intern</h5>
+            <ul>
+              <li>
+                Performed code optimizations on a semi-daily data import script,
+                reducing execution time from over 2 hours to approximately 45
+                minutes.
+              </li>
+              <li>
+                Led development efforts of a new internal tool to catalog and
+                manage website hosting and billing information for over 150
+                websites.
+              </li>
+              <li>
+                Provided agency with recommendations based on research into
+                state-of-the-art accessibility and code standards.
+              </li>
+            </ul>
+          </div>
+          <div class="workplace">
+            <h4>iD Tech Camps</h4>
+            <p>Danbury, CT</p>
+          </div>
+          <div>
+            <h5>Instructor</h5>
+            <p class="work-time">June 2016 &mdash; August 2016</p>
+            <ul>
+              <li>
+                Instructed students ages 12 to 17 on introductory to advanced
+                concepts in both the C++ and Java programming languages.
+              </li>
+              <li>
+                Engineered a starter code package to assist with Processing
+                (Java) instruction.
+              </li>
+              <li>
+                Worked closely with other instructors, Health and Safety
+                coordinator, and Camp Director to ensure a safe and fun learning
+                environment for children ages 6 to 17.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h3 id="section_academics">Education</h3>
+        <div class="education-wrapper">
+          <div class="edu-card">
+            <h4>Rochester Institute of Technology</h4>
+            <p>
+              Master of Science, Human-Computer Interaction<br />
+              January 2022 &mdash; May 2024<br />
+              GPA: 3.83
+            </p>
+          </div>
+          <div class="edu-card">
+            <h4>Rochester Institute of Technology</h4>
+            <p>
+              Bachelor of Science, Game Design and Development<br />
+              August 2014 &mdash; May 2018<br />
+              GPA: 3.67
+            </p>
+          </div>
+        </div>
+        <h4>Academic Work</h4>
+        <ul class="academic-work">
+          <li class="academic-work-item">
+            <span
+              >An Exploration of Learning Management System Usage Patterns by
+              College-Level Learners<br /><small
+                >Final Research Project to complete M.S. Degree</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_LMS_System_Usage_College_Level_Learners.pdf"
+                target="_blank"
+                data-tooltip="View PDF"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr">View Final Project PDF in a new tab.</span>
+              </a>
             </div>
-            <div id="section_about" class="container about">
-                <div class="about-image-wrapper">
-                    <img class="headshot" src="img/headshot_feb24.jpg" alt="An image of Alec" />
-                </div>
-                <div class="about-text-wrapper">
-                    <h2>Hi, I&apos;m Alec!</h2>
-                    <p>I&apos;m a seasoned full-stack web developer and recent Master&apos;s graduate experienced with working in interdisciplinary teams &mdash; most often, my role requires translating business and functional requirements into product features and then designing/developing them (or both!). My previous work experience and education has allowed me to develop strong communication and organizational skills which are so often required in fast-pace environments.</p>
-                    <p>My academic and personal portfolios span multiple technologies and industries. From websites to research, health informatics to geographic imaging, nothing is really &apos;off the table&apos; for what I&apos;m interested in. I like to remain somewhat technology-agnostic; as a proactive self-starter I&apos;m open to learning new technologies and adapting to them quickly.</p>
-                </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Designing Video Games for Education: A Meta-Analysis of Current
+              and Future Efforts<br /><small
+                >Research performed for Interactive Courseware</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_Designing_Video_Games_for_Education.pdf"
+                target="_blank"
+                data-tooltip="View PDF"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr"
+                  >View Interactive Courseware Research PDF in a new tab.</span
+                >
+              </a>
             </div>
-            <div id="section_resume" class="container resume">
-                <h2 class="bars">My Stack</h2>
-                <p>The technologies you might find me using in my professional and personal projects.</p>
-                    <ul class="stack-key">
-                        <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Proficient</li>
-                        <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Actively Learning</li>
-                        <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>Highly Motivated to Learn</li>
-                    </ul>
-                </p>
-                <div class="stack-grid">
-                    <article class="stack-card">
-                        <header>Frontend Development</header>
-                        <ul>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>HTML5, CSS3, JavaScript <small>(ES6&plus;)</small></li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>CSS Preprocessors <br/><small>&lpar;LESS, SASS&rpar;</small></li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>JQuery</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Bootstrap <small>&lpar;2-5&rpar;</small></li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Vue 3</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Petite Vue</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>SolidJS</li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>React</li>
-                        </ul>
-                    </article>
-                    <article class="stack-card">
-                        <header>Frontend Design</header>
-                        <ul>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Accessible Web Design (WCAG 2.1)</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Stateless Components</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Heuristic Evaluation</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>CSS Grid</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Stateful Components</li>
-                        </ul>
-                    </article>
-                    <article class="stack-card">
-                        <header>Backend Technologies</header>
-                        <ul>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>PHP</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>MySQL/MariaDB</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Zend Framework</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>REST APIs<br/><small>&lpar;Development, Integration&rpar;</small></li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Node.js</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Laravel<br/><small>&lpar;&plus; Inertia.js&rpar;</small></li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>Symfony</li>
-                        </ul>
-                    </article>
-                    <article class="stack-card">
-                        <header>Content Management</header>
-                        <ul>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>ConcreteCMS</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>WordPress</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>WP Theme Builders</br><small>&lpar;Divi, Elementor&rpar;</small></li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>CMS Version Upgrades, Platform Migrations</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Strapi</li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>ApostropheCMS</li>
-                        </ul>
-                    </article>
-                    <article class="stack-card">
-                        <header>DevOps</header>
-                        <ul>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Cloudflare</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>VPS Hosting</br><small>&lpar;DigitalOcean, Vultr&rpar;</small></li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Rackspace</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Plesk</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Apache &plus; Nginx</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Webmin/Virtualmin</li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>AWS</li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>Docker</li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>CI/CD Pipelines</li>
-                        </ul>
-                    </article>
-                    <article class="stack-card">
-                        <header>Workflow</header>
-                        <ul>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Grunt</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Slack</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Git/GitHub</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Figma</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Adobe XD</li>
-                            <li class="proficient"><i class="icon-check2" aria-hidden="true"></i>Google Suite</li>
-                            <li class="learning"><i class="icon-dash-lg" aria-hidden="true"></i>Vite</li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>Agile/Scrum</li>
-                            <li class="want-to-learn"><i class="icon-question-lg" aria-hidden="true"></i>Webpack</li>
-                        </ul>
-                    </article>
-                </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >[Group] Heuristic Evaluation and Usability Testing<br /><small
+                >Research for a real-world client (MeetingMap)</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_MeetingMap_Final_Report.pdf"
+                target="_blank"
+                data-tooltip="View Final Report"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr"
+                  >View MeetingMap Usability Evaluation Report in a new
+                  tab.</span
+                >
+              </a>
+              <a
+                role="button"
+                href="https://youtu.be/y8jWPSFUv64"
+                target="_blank"
+                data-tooltip="Video Presentation"
+              >
+                <i class="icon-camera-video" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;Video</span>
+                <span class="sr"
+                  >View MeetingMap Presentation Video in a new tab.</span
+                >
+              </a>
             </div>
-            <div class="container projects">
-                <h2 class="bars">My Work</h2>
-                <p class="text-center">A brief history of my industry experience, academics, and personal projects.</p>
-                <h3 class="sr">Experience</h3>
-                <div class="experience-wrapper">
-                    <div class="workplace">
-                        <h4>The WORX Group, LLC</h4>
-                        <p>Prospect, CT</p>
-                    </div>
-                    <div>
-                        <h5>Developer</h5>
-                        <p class="work-time">January 2019 &mdash; July 2021</p>
-                        <ul>
-                            <li>Created a reusable, responsive, accessible website navigation template inside ConcreteCMS.</li>
-                            <li>Managed the audit, CMS updates, and migration of 52 websites to new hosting environments for a large insurance company.</li>
-                            <li>Rapidly prepared and implemented solutions to resolve security vulnerabilities.</li>
-                            <li>Developed new processes for server initialization for WordPress websites.</li>
-                        </ul>
-                        <h5>Digital Production Assistant</h5>
-                        <p class="work-time">August 2018 &mdash; January 2019</p>
-                        <ul>
-                            <li>Worked with graphic designers and marketing specialists to develop website improvements given a fixed, limited budget.</li>
-                            <li>Translated graphic design mockups in Adobe XD into reusable CMS components (ConcreteCMS blocks) used in the construction of new websites.</li>
-                            <li>Wrote scripts to quickly identify outdated hosting, email, and DNS settings across over 150 websites in a shared hosting environment.</li>
-                        </ul>
-                        <h5>Digital Technology Intern</h5>
-                        <ul>
-                            <li>Performed code optimizations on a semi-daily data import script, reducing execution time from over 2 hours to approximately 45 minutes.</li>
-                            <li>Led development efforts of a new internal tool to catalog and manage website hosting and billing information for over 150 websites.</li>
-                            <li>Provided agency with recommendations based on research into state-of-the-art accessibility and code standards.</li>
-                        </ul>
-                    </div>
-                    <div class="workplace">
-                        <h4>iD Tech Camps</h4>
-                        <p>Danbury, CT</p>
-                    </div>
-                    <div>
-                        <h5>Instructor</h5>
-                        <p class="work-time">June 2016 &mdash; August 2016</p>
-                        <ul>
-                            <li>Instructed students ages 12 to 17 on introductory to advanced concepts in both the C++ and Java programming languages.</li>
-                            <li>Engineered a starter code package to assist with Processing (Java) instruction.</li>
-                            <li>Worked closely with other instructors, Health and Safety coordinator, and Camp Director to ensure a safe and fun learning environment for children ages 6 to 17.</li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 id="section_academics">Education</h3>
-                <div class="education-wrapper">
-                    <div class="edu-card">
-                        <h4>Rochester Institute of Technology</h4>
-                        <p>Master of Science, Human-Computer Interaction<br/>
-                        January 2022 &mdash; May 2024<br/>
-                        GPA: 3.83</p>
-                    </div>
-                    <div class="edu-card">
-                        <h4>Rochester Institute of Technology</h4>
-                        <p>Bachelor of Science, Game Design and Development<br/>
-                        August 2014 &mdash; May 2018<br/>
-                        GPA: 3.67</p>
-                    </div>
-                </div>
-                <h4>Academic Work</h4>
-                <ul class="academic-work">
-                    <li class="academic-work-item">
-                        <span>An Exploration of Learning Management System Usage Patterns by College-Level Learners<br/><small>Final Research Project to complete M.S. Degree</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_LMS_System_Usage_College_Level_Learners.pdf" target="_blank" data-tooltip="View PDF">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View Final Project PDF in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Designing Video Games for Education: A Meta-Analysis of Current and Future Efforts<br/><small>Research performed for Interactive Courseware</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Designing_Video_Games_for_Education.pdf" target="_blank" data-tooltip="View PDF">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View Interactive Courseware Research PDF in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>[Group] Heuristic Evaluation and Usability Testing<br/><small>Research for a real-world client (MeetingMap)</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_MeetingMap_Final_Report.pdf" target="_blank" data-tooltip="View Final Report">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View MeetingMap Usability Evaluation Report in a new tab.</span>
-                            </a>
-                            <a role="button" href="https://youtu.be/y8jWPSFUv64" target="_blank" data-tooltip="Video Presentation">
-                                <i class="icon-camera-video" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Video</span>
-                                <span class="sr">View MeetingMap Presentation Video in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>[Group] UI/UX Design for University Degree Tracking<br/><small>Covers contextual inquiry, persona development, and iterative prototyping with user feedback</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="https://620-2201-group6.pages.dev/" target="_blank" data-tooltip="Project Website">
-                                <i class="icon-globe2" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Website</span>
-                                <span class="sr">View Project Webpage in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Interactive Courseware: Mock LMS Module 1<br/><small>Showcases Richard Mayer&apos;s Multimedia and Contiguity Principles</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/661p1/index.html" target="_blank" data-tooltip="Module Webpage">
-                                <i class="icon-globe2" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Website</span>
-                                <span class="sr">View Mock LMS Module 1 Website in a new tab.</span>
-                            </a>
-                            <a role="button" href="project/661p1/Bielanos_MockLMS1_Explanation.pdf" target="_blank" data-tooltip="Concept Documentation">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Documentation</span>
-                                <span class="sr">View Mock LMS Module 1 Documentation in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Interactive Courseware: Mock LMS Module 2<br/><small>Showcases Richard Mayer&apos;s Modality, Redundance, and Coherence Principles</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/661p4/index.html" target="_blank" data-tooltip="Module Webpage">
-                                <i class="icon-globe2" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Website</span>
-                                <span class="sr">View Mock LMS Module 2 Website in a new tab.</span>
-                            </a>
-                            <a role="button" href="project/661p4/Bielanos_MockLMS2_Explanation.pdf" target="_blank" data-tooltip="Concept Documentation">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Documentation</span>
-                                <span class="sr">View Mock LMS Module 2 Documentation in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Interactive Courseware: Mock LMS Module 3<br/><small>Showcases Richard Mayer&apos;s Personalization, Segmenting, and Pretraining Principles</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/661p3/index.html" target="_blank" data-tooltip="Module Webpage">
-                                <i class="icon-globe2" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Website</span>
-                                <span class="sr">View Mock LMS Module 3 Website in a new tab.</span>
-                            </a>
-                            <a role="button" href="project/661p3/Bielanos_MockLMS3_Explanation.pdf" target="_blank" data-tooltip="Concept Documentation">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Documentation</span>
-                                <span class="sr">View Mock LMS Module 3 Documentation in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Mock Instructional Course Design with Example Module<br/><small>Example includes Problem Statement, Optimals/Actuals, Learning Objectives, and Formative Evaluation of Module.</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Mock_ID_Curriculum_Module_FE.pdf" target="_blank" data-tooltip="View Design Doc">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Design Doc</span>
-                                <span class="sr">View Course Design Doc in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Geographic Information Systems: Data Transformations for Airport Impact<br/><small>Utilizing the ArcGIS Geoprocessing Toolkit and Data Science to calculate airport impact across socioeconomic and environmental factors.</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="https://storymaps.arcgis.com/stories/9e6c93b33aa64fc3a15e33585e17e5ce" target="_blank" data-tooltip="Project Website">
-                                <i class="icon-globe2" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Story Map</span>
-                                <span class="sr">View Geographic Information Systems Project in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Evaluation of Emerging Technologies in Neurosurgical Education<br/><small>Research on Medical Informatics</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Emerging_Technologies_Neuro_Education.pdf" target="_blank" data-tooltip="View PDF">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View Medical Informatics Research Paper in a new tab.</span>
-                            </a>
-                            <a role="button" href="https://youtu.be/9N4JLSWpZwU" target="_blank" data-tooltip="Video Presentation">
-                                <i class="icon-camera-video" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;Video</span>
-                                <span class="sr">View Video Presentation of Medical Informatics Paper in a New Tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>Research Proposal: Evaluating Gamified e-Learning Experiences for Increases in Perceived Enjoyment<br/><small>A Proposal for Future Research.</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Evaluating_Gamified_eLearning_for_Enjoyment.pdf" target="_blank" data-tooltip="View PDF">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View Research Proposal PDF in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>[Group] Workplace Research: Attitudes Toward Hybrid Work and Its Effect on Productivity<br/><small>A Qualitative Interview Study.</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Attitudes_Toward_Work_Productivity.pdf" target="_blank" data-tooltip="View PDF">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View Qualitative Interview Study PDF in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>[Group] Workplace Research: Hybrid, Remote and On-site: An Analysis of Attitudes and Perceptions About Work Environments<br/><small>A Quantitative Study using Surveys and Statistical Analysis.</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Perceptions_of_Hybrid_Remote_Work.pdf" target="_blank" data-tooltip="View PDF">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View Quantitative Survey Study PDF in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="academic-work-item">
-                        <span>[Group] Workplace Research: Office Distractions &mdash; An Experimental Study to Determine if Auditory Noises Impact Task Performance<br/><small>An Experimental Study and Related Statistical Analysis.</small></span>
-                        <div class="btn-group">
-                            <a role="button" href="project/Bielanos_Auditory_Distractions_Work_Performance.pdf" target="_blank" data-tooltip="View PDF">
-                                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
-                                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
-                                <span class="sr">View Experimental Study PDF in a new tab.</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <h3 id="section_projects">Personal Projects</h3>
-                <div class="projects-grid">
-                    <article class="project-wrapper">
-                        <header>
-                            <img src="img/postcard.jpg" alt="A postcard icon" />
-                        </header>
-                        <h4>RecipeGuru</h4>
-                        <p>[On the Horizon] Hate looking up recipes on your phone because of all the ads and SEO-Friendly filler you have to scroll past? I might be able to do something about that...</p>
-                        <footer>
-                            <a role="button" disabled href="#" class="button project-button" target="_blank">Coming Soon</a>
-                        </footer>
-                    </article>
-                    <article class="project-wrapper">
-                        <header>
-                            <img src="img/cup_straw.jpg" alt="An icon of a cup with a straw" />
-                        </header>
-                        <h4>Bar 1354</h4>
-                        <p>[On the Horizon] Revolutionizing the Cocktail Bar menu for both patrons and bartenders/mixologists.</p>
-                        <footer>
-                            <a role="button" disabled href="#" class="button project-button" target="_blank">Coming Soon</a>
-                        </footer>
-                    </article>
-                    <article class="project-wrapper">
-                        <header>
-                            <img src="img/badge_3d.png" alt="A box with rounded corners and the text 3D in the middle" />
-                        </header>
-                        <h4>ConcreteCMS Model Viewer</h4>
-                        <p>Adding a block to the ConcreteCMS editor which allows for the display and control of GLTF-based 3D models, utilizing Google&apos;s &lt;model-viewer&gt; web component.</p>
-                        <footer>
-                            <a role="button" href="https://bitbucket.org/alecbiela/ccms-model-viewer/src/main/" class="button project-button" target="_blank"><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View Source</a>
-                        </footer>
-                    </article>   
-                    <article class="project-wrapper">
-                        <header>
-                            <img src="img/code_slash.jpg" alt="A code slash icon" />
-                        </header>
-                        <h4>Website Source Code</h4>
-                        <p>View the source code for this landing page website, built using PicoCSS and flat-HTML &lpar;for now&rpar;.</p>
-                        <footer>
-                            <a role="button" href="https://bitbucket.org/alecbiela/ab-webdev-slim/src/main/" class="button project-button" target="_blank"><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View Source</a>
-                        </footer>
-                    </article>                    
-                    <article class="project-wrapper">
-                        <header>
-                            <img src="img/c5fm_thumbnail.jpg" alt="A picture of the Concrete5 Legacy File Manager Project" />
-                        </header>
-                        <h4>Concrete5 Legacy File Manager</h4>
-                        <p>A drop-in Dropzone.js replacement for the legacy Concrete5 File Manager (version &leq;5.6) to replace the Adobe Flash-based implementation.</p>
-                        <footer>
-                            <a role="button" href="https://bitbucket.org/alecbiela/c5_legacy_updated_file_manager/src/main/" class="button project-button" target="_blank"><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View Source</a>
-                        </footer>
-                    </article>
-                    <article class="project-wrapper">
-                        <header>
-                            <img src="img/bhct_thumbnail.jpg" alt="A screenshot of the BetterHealthCT Marketing Website Homepage" />
-                        </header>
-                        <h4>Chiropractic Marketing Website</h4>
-                        <p>A website for a Chiropractic practice located in Connecticut, built in WordPress.</p>
-                        <footer>
-                            <a role="button" href="https://betterhealthct.com" class="button project-button" target="_blank"><i class="icon-globe2" aria-hidden="true"></i>&nbsp;Visit Site</a>
-                        </footer>
-                    </article>
-                    <article class="project-wrapper">
-                        <header>
-                            <img src="img/xb360_thumbnail.jpg" alt="A picture of the Xbox 360 Rock Band Drum Controller" />
-                        </header>
-                        <h4>Xbox 360 Drum Controller to USB</h4>
-                        <p>Converting a wireless Xbox 360 Rock Band Drum Controller to USB for use with PC.</p>
-                        <footer>
-                            <a role="button" href="https://bitbucket.org/alecbiela/x360-rb2-drumset/src/master/" class="button project-button" target="_blank"><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View Code</a>
-                        </footer>
-                    </article>
-                </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >[Group] UI/UX Design for University Degree Tracking<br /><small
+                >Covers contextual inquiry, persona development, and iterative
+                prototyping with user feedback</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="https://620-2201-group6.pages.dev/"
+                target="_blank"
+                data-tooltip="Project Website"
+              >
+                <i class="icon-globe2" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Website</span
+                >
+                <span class="sr">View Project Webpage in a new tab.</span>
+              </a>
             </div>
-            <div id="section_contact" class="cta">
-                <div class="container">
-                    <h2 class="text-center">Connect With Me</h2>
-                    <p class="text-center">Let&apos;s see what we can create together.</p>
-                    <form action="#" method="GET" id="social_links_form">
-                        <input type="hidden" id="hhpp" value="" />
-                        <ul class="social-links">
-                            <li><button data-tooltip="Send me an Email" type="submit" id="bt_em" class="social-link"><i class="icon-envelope" aria-hidden="true"></i><span class="sr">Send Alec an Email</span></button></li>
-                            <li><button data-tooltip="View my LinkedIn profile" type="submit" id="bt_li" class="social-link"><i class="icon-linkedin" aria-hidden="true"></i><span class="sr">View Alec&apos;s LinkedIn Page</span></button></li>
-                            <li><button data-tooltip="View my BitBucket page" type="submit" id="bt_gh" class="social-link"><i class="icon-git" aria-hidden="true"></i><span class="sr">View Alec&apos;s BitBucket Page</span></button></li>
-                        </ul>     
-                    </form>
-                </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Interactive Courseware: Mock LMS Module 1<br /><small
+                >Showcases Richard Mayer&apos;s Multimedia and Contiguity
+                Principles</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/661p1/index.html"
+                target="_blank"
+                data-tooltip="Module Webpage"
+              >
+                <i class="icon-globe2" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Website</span
+                >
+                <span class="sr"
+                  >View Mock LMS Module 1 Website in a new tab.</span
+                >
+              </a>
+              <a
+                role="button"
+                href="project/661p1/Bielanos_MockLMS1_Explanation.pdf"
+                target="_blank"
+                data-tooltip="Concept Documentation"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Documentation</span
+                >
+                <span class="sr"
+                  >View Mock LMS Module 1 Documentation in a new tab.</span
+                >
+              </a>
             </div>
-        </main>
-        <footer>
-            <div class="container">
-                <p>Copyright &copy; 2024 Alec Bielanos.</p>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Interactive Courseware: Mock LMS Module 2<br /><small
+                >Showcases Richard Mayer&apos;s Modality, Redundance, and
+                Coherence Principles</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/661p4/index.html"
+                target="_blank"
+                data-tooltip="Module Webpage"
+              >
+                <i class="icon-globe2" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Website</span
+                >
+                <span class="sr"
+                  >View Mock LMS Module 2 Website in a new tab.</span
+                >
+              </a>
+              <a
+                role="button"
+                href="project/661p4/Bielanos_MockLMS2_Explanation.pdf"
+                target="_blank"
+                data-tooltip="Concept Documentation"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Documentation</span
+                >
+                <span class="sr"
+                  >View Mock LMS Module 2 Documentation in a new tab.</span
+                >
+              </a>
             </div>
-        </footer>
-        <script src="./js/main.min.js" type="text/javascript"></script>
-    </body>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Interactive Courseware: Mock LMS Module 3<br /><small
+                >Showcases Richard Mayer&apos;s Personalization, Segmenting, and
+                Pretraining Principles</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/661p3/index.html"
+                target="_blank"
+                data-tooltip="Module Webpage"
+              >
+                <i class="icon-globe2" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Website</span
+                >
+                <span class="sr"
+                  >View Mock LMS Module 3 Website in a new tab.</span
+                >
+              </a>
+              <a
+                role="button"
+                href="project/661p3/Bielanos_MockLMS3_Explanation.pdf"
+                target="_blank"
+                data-tooltip="Concept Documentation"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Documentation</span
+                >
+                <span class="sr"
+                  >View Mock LMS Module 3 Documentation in a new tab.</span
+                >
+              </a>
+            </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Mock Instructional Course Design with Example Module<br /><small
+                >Example includes Problem Statement, Optimals/Actuals, Learning
+                Objectives, and Formative Evaluation of Module.</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_Mock_ID_Curriculum_Module_FE.pdf"
+                target="_blank"
+                data-tooltip="View Design Doc"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Design Doc</span
+                >
+                <span class="sr">View Course Design Doc in a new tab.</span>
+              </a>
+            </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Geographic Information Systems: Data Transformations for Airport
+              Impact<br /><small
+                >Utilizing the ArcGIS Geoprocessing Toolkit and Data Science to
+                calculate airport impact across socioeconomic and environmental
+                factors.</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="https://storymaps.arcgis.com/stories/9e6c93b33aa64fc3a15e33585e17e5ce"
+                target="_blank"
+                data-tooltip="Project Website"
+              >
+                <i class="icon-globe2" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true"
+                  >&nbsp;Story Map</span
+                >
+                <span class="sr"
+                  >View Geographic Information Systems Project in a new
+                  tab.</span
+                >
+              </a>
+            </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Evaluation of Emerging Technologies in Neurosurgical Education<br /><small
+                >Research on Medical Informatics</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_Emerging_Technologies_Neuro_Education.pdf"
+                target="_blank"
+                data-tooltip="View PDF"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr"
+                  >View Medical Informatics Research Paper in a new tab.</span
+                >
+              </a>
+              <a
+                role="button"
+                href="https://youtu.be/9N4JLSWpZwU"
+                target="_blank"
+                data-tooltip="Video Presentation"
+              >
+                <i class="icon-camera-video" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;Video</span>
+                <span class="sr"
+                  >View Video Presentation of Medical Informatics Paper in a New
+                  Tab.</span
+                >
+              </a>
+            </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >Research Proposal: Evaluating Gamified e-Learning Experiences for
+              Increases in Perceived Enjoyment<br /><small
+                >A Proposal for Future Research.</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_Evaluating_Gamified_eLearning_for_Enjoyment.pdf"
+                target="_blank"
+                data-tooltip="View PDF"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr">View Research Proposal PDF in a new tab.</span>
+              </a>
+            </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >[Group] Workplace Research: Attitudes Toward Hybrid Work and Its
+              Effect on Productivity<br /><small
+                >A Qualitative Interview Study.</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_Attitudes_Toward_Work_Productivity.pdf"
+                target="_blank"
+                data-tooltip="View PDF"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr"
+                  >View Qualitative Interview Study PDF in a new tab.</span
+                >
+              </a>
+            </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >[Group] Workplace Research: Hybrid, Remote and On-site: An
+              Analysis of Attitudes and Perceptions About Work Environments<br /><small
+                >A Quantitative Study using Surveys and Statistical
+                Analysis.</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_Perceptions_of_Hybrid_Remote_Work.pdf"
+                target="_blank"
+                data-tooltip="View PDF"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr"
+                  >View Quantitative Survey Study PDF in a new tab.</span
+                >
+              </a>
+            </div>
+          </li>
+          <li class="academic-work-item">
+            <span
+              >[Group] Workplace Research: Office Distractions &mdash; An
+              Experimental Study to Determine if Auditory Noises Impact Task
+              Performance<br /><small
+                >An Experimental Study and Related Statistical Analysis.</small
+              ></span
+            >
+            <div class="btn-group">
+              <a
+                role="button"
+                href="project/Bielanos_Auditory_Distractions_Work_Performance.pdf"
+                target="_blank"
+                data-tooltip="View PDF"
+              >
+                <i class="icon-file-earmark-richtext" aria-hidden="true"></i>
+                <span class="mobile-title" aria-hidden="true">&nbsp;PDF</span>
+                <span class="sr"
+                  >View Experimental Study PDF in a new tab.</span
+                >
+              </a>
+            </div>
+          </li>
+        </ul>
+        <h3 id="section_projects">Personal Projects</h3>
+        <div class="projects-grid">
+          <article class="project-wrapper">
+            <header>
+              <img src="img/postcard.jpg" alt="A postcard icon" />
+            </header>
+            <h4>RecipeGuru</h4>
+            <p>
+              [On the Horizon] Hate looking up recipes on your phone because of
+              all the ads and SEO-Friendly filler you have to scroll past? I
+              might be able to do something about that...
+            </p>
+            <footer>
+              <a
+                role="button"
+                disabled
+                href="#"
+                class="button project-button"
+                target="_blank"
+                >Coming Soon</a
+              >
+            </footer>
+          </article>
+          <article class="project-wrapper">
+            <header>
+              <img
+                src="img/cup_straw.jpg"
+                alt="An icon of a cup with a straw"
+              />
+            </header>
+            <h4>Bar 1354</h4>
+            <p>
+              [On the Horizon] Revolutionizing the Cocktail Bar menu for both
+              patrons and bartenders/mixologists.
+            </p>
+            <footer>
+              <a
+                role="button"
+                disabled
+                href="#"
+                class="button project-button"
+                target="_blank"
+                >Coming Soon</a
+              >
+            </footer>
+          </article>
+          <article class="project-wrapper">
+            <header>
+              <img
+                src="img/badge_3d.png"
+                alt="A box with rounded corners and the text 3D in the middle"
+              />
+            </header>
+            <h4>ConcreteCMS Model Viewer</h4>
+            <p>
+              Adding a block to the ConcreteCMS editor which allows for the
+              display and control of GLTF-based 3D models, utilizing
+              Google&apos;s &lt;model-viewer&gt; web component.
+            </p>
+            <footer>
+              <a
+                role="button"
+                href="https://bitbucket.org/alecbiela/ccms-model-viewer/src/main/"
+                class="button project-button"
+                target="_blank"
+                ><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View
+                Source</a
+              >
+            </footer>
+          </article>
+          <article class="project-wrapper">
+            <header>
+              <img src="img/code_slash.jpg" alt="A code slash icon" />
+            </header>
+            <h4>Website Source Code</h4>
+            <p>
+              View the source code for this landing page website, built using
+              PicoCSS and flat-HTML &lpar;for now&rpar;.
+            </p>
+            <footer>
+              <a
+                role="button"
+                href="https://bitbucket.org/alecbiela/ab-webdev-slim/src/main/"
+                class="button project-button"
+                target="_blank"
+                ><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View
+                Source</a
+              >
+            </footer>
+          </article>
+          <article class="project-wrapper">
+            <header>
+              <img
+                src="img/c5fm_thumbnail.jpg"
+                alt="A picture of the Concrete5 Legacy File Manager Project"
+              />
+            </header>
+            <h4>Concrete5 Legacy File Manager</h4>
+            <p>
+              A drop-in Dropzone.js replacement for the legacy Concrete5 File
+              Manager (version &leq;5.6) to replace the Adobe Flash-based
+              implementation.
+            </p>
+            <footer>
+              <a
+                role="button"
+                href="https://bitbucket.org/alecbiela/c5_legacy_updated_file_manager/src/main/"
+                class="button project-button"
+                target="_blank"
+                ><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View
+                Source</a
+              >
+            </footer>
+          </article>
+          <article class="project-wrapper">
+            <header>
+              <img
+                src="img/bhct_thumbnail.jpg"
+                alt="A screenshot of the BetterHealthCT Marketing Website Homepage"
+              />
+            </header>
+            <h4>Chiropractic Marketing Website</h4>
+            <p>
+              A website for a Chiropractic practice located in Connecticut,
+              built in WordPress.
+            </p>
+            <footer>
+              <a
+                role="button"
+                href="https://betterhealthct.com"
+                class="button project-button"
+                target="_blank"
+                ><i class="icon-globe2" aria-hidden="true"></i>&nbsp;Visit
+                Site</a
+              >
+            </footer>
+          </article>
+          <article class="project-wrapper">
+            <header>
+              <img
+                src="img/xb360_thumbnail.jpg"
+                alt="A picture of the Xbox 360 Rock Band Drum Controller"
+              />
+            </header>
+            <h4>Xbox 360 Drum Controller to USB</h4>
+            <p>
+              Converting a wireless Xbox 360 Rock Band Drum Controller to USB
+              for use with PC.
+            </p>
+            <footer>
+              <a
+                role="button"
+                href="https://bitbucket.org/alecbiela/x360-rb2-drumset/src/master/"
+                class="button project-button"
+                target="_blank"
+                ><i class="icon-code-slash" aria-hidden="true"></i>&nbsp;View
+                Code</a
+              >
+            </footer>
+          </article>
+        </div>
+      </div>
+      <div id="section_contact" class="cta">
+        <div class="container">
+          <h2 class="text-center">Connect With Me</h2>
+          <p class="text-center">Let&apos;s see what we can create together.</p>
+          <form @submit.prevent="handleSocialLinks" id="social_links_form">
+            <input type="hidden" id="hhpp" value="" />
+            <ul class="social-links">
+              <li>
+                <button
+                  data-tooltip="Send me an Email"
+                  type="submit"
+                  id="bt_em"
+                  class="social-link"
+                >
+                  <i class="icon-envelope" aria-hidden="true"></i
+                  ><span class="sr">Send Alec an Email</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  data-tooltip="View my LinkedIn profile"
+                  type="submit"
+                  id="bt_li"
+                  class="social-link"
+                >
+                  <i class="icon-linkedin" aria-hidden="true"></i
+                  ><span class="sr">View Alec&apos;s LinkedIn Page</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  data-tooltip="View my BitBucket page"
+                  type="submit"
+                  id="bt_gh"
+                  class="social-link"
+                >
+                  <i class="icon-git" aria-hidden="true"></i
+                  ><span class="sr">View Alec&apos;s BitBucket Page</span>
+                </button>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>Copyright &copy; 2024 Alec Bielanos.</p>
+      </div>
+    </footer>
+    <script src="./js/main.min.js" type="module"></script>
+  </body>
 </html>
