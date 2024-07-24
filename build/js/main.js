@@ -1,4 +1,6 @@
 import { createApp, reactive } from "https://unpkg.com/petite-vue?module";
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+import DOMPurify from "https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.mjs";
 
 window.onload = (() => {
   "use strict";
@@ -29,7 +31,40 @@ window.onload = (() => {
     switchTheme.focus();
     removeTooltip(3000);
     */
+  // Global store for the entire page
+  const store = reactive({
+    count: 0,
+    navOpen: false,
+    content: { about: "" },
+  });
 
+  // Load up all the content from the markdown files
+  const asyncGetContent = async (url) => {
+    try {
+      const res = await fetch(url, {
+        headers: {
+          "Content-Type": "text/plain",
+        },
+      });
+      if (!res.ok) {
+        throw new Error(
+          `Getting content failed at URL ${url} with error status ${res.status}`
+        );
+      }
+      const text = await res.text();
+      return DOMPurify.sanitize(marked(text));
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const loadContent = async () => {
+    await asyncGetContent("/md/about.md").then(
+      (text) => (store.content.about = text)
+    );
+  };
+
+  // Set up smooth scrolling on all anchor links
   const smoothScroll = () => {
     let x = document.querySelectorAll('a[href*="#"]');
     for (let i = 0; i < x.length; i++) {
@@ -50,10 +85,16 @@ window.onload = (() => {
     }
   };
 
-  //honeypot
+  // Main initialization logic, runs when petite-vue gets mounted
   const handleOnMount = () => {
+    //set honeypot
     document.getElementById("hhpp").value = "check";
+
+    //init smooth scrolling functionality
     smoothScroll();
+
+    //get page content
+    loadContent();
   };
 
   // Form submit for social links
@@ -75,18 +116,6 @@ window.onload = (() => {
       }
     }
   };
-
-  // Global store for the entire page
-  const store = reactive({
-    count: 0,
-    navOpen: false,
-    inc() {
-      this.count++;
-    },
-  });
-
-  // manipulate it here
-  store.inc();
 
   createApp({
     // share it with app scopes
