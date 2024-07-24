@@ -1,88 +1,107 @@
-:root{
-    --skill-proficient: #00ff00;
-    --skill-learning: #ffe600;
-    --skill-want-to-learn: #ff00ff;
-    --logomark-size: 46px;
-    --logomark-size-half: 23px;
-    --button-background: #07a;
-    --button-text: #fff;
-    --button-active-background: #333;
+:root {
+  --skill-proficient: #00ff00;
+  --skill-learning: #ffe600;
+  --skill-want-to-learn: #ff00ff;
+  --logomark-size: 46px;
+  --logomark-size-half: 23px;
+  --button-background: #07a;
+  --button-text: #fff;
+  --button-active-background: #333;
 }
 
 html {
-    position: relative;
-    font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-variation-settings:
-        "wdth" 100,
-        "YTLC" 500;
+  position: relative;
+  font-family: 'Nunito Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100, 'YTLC' 500;
 
-    main{padding-block: 0;
-        .container{
-            padding-top: 60px;
-            padding-bottom: 60px;
-        }
+  main {
+    padding-block: 0;
+    .container {
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
+  }
 }
 
-.sr{
-    position: absolute !important;
-    height: 1px; width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+.sr {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
-.text-center{text-align:center;}
+.text-center {
+  text-align: center;
+}
 
-h2.bars{
-    margin: auto;
-    margin-bottom: var(--pico-typography-spacing-vertical);
-    text-align: center;
-    position: relative;
-    &::before, &::after{
-        content: '';
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 30px;
-        height: 4px;
-        background: var(--pico-color);
-    }
-    &::before{left: -20px;}
-    &::after{right: -50px;}
+h2.bars {
+  margin: auto;
+  margin-bottom: var(--pico-typography-spacing-vertical);
+  text-align: center;
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 4px;
+    background: var(--pico-color);
+  }
+  &::before {
+    left: -20px;
+  }
+  &::after {
+    right: -50px;
+  }
 }
 
 /* Button Styles */
-a[role="button"], button[type="submit"]{
-    background: var(--button-background);
-    border-color: var(--button-background);
-    transition: all 300ms ease;
-    &:hover, &:focus{
-        background: var(--button-active-background);
-        border-color: var(--button-active-background);
-    }
+a[role='button'],
+button[type='submit'] {
+  background: var(--button-background);
+  border-color: var(--button-background);
+  transition: all 300ms ease;
+  &:hover,
+  &:focus {
+    background: var(--button-active-background);
+    border-color: var(--button-active-background);
+  }
 }
 
-@media only screen and (max-width: 767px){
-    html main .container{
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+a[data-tooltip] {
+  &::before {
+    padding: 5px 10px;
+    transform: translate(0, 0.25rem);
+    right: 0;
+    left: unset;
+  }
+  &:hover::before {
+    --pico-tooltip-slide-to: translate(0, -0.25rem);
+    transform: translate(0, 0.75rem);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html main .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 /* Light Mode (Auto and Forced) */
-[data-theme=light],
-:root:not([data-theme=dark]) {
-
+[data-theme='light'],
+:root:not([data-theme='dark']) {
 }
 
 /* Dark Mode (Auto) */
 @media only screen and (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-        
-    }
+  :root:not([data-theme]) {
+  }
 }
 
 /* Dark Mode (Forced) */
-[data-theme="dark"] {
-    
+[data-theme='dark'] {
 }
