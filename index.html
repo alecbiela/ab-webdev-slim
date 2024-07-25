@@ -7,15 +7,28 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-BMSWER6PJW"
     ></script>
     <script>
-      /*window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || []
       function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
       }
-      gtag("js", new Date());
-      gtag("config", "G-BMSWER6PJW");*/
+      gtag('js', new Date())
+      gtag('config', 'G-BMSWER6PJW')
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="Alec Bielanos | Web Architect" />
+    <meta
+      name="description"
+      content="A developer of all things online. Specializing in custom CMS integration, monolithic web apps, and REST API development, and Accessibility Audits."
+    />
+    <meta
+      name="keywords"
+      content="developer, freelance, hci, recruiting, concrete5, concretecms, ux, accessibility, wcag, 508, web app, web developer, custom cms, wordpress, looking for work"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="author" content="Alec Bielanos" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +36,7 @@
       rel="stylesheet"
     />
     <link href="./css/main.min.css" rel="stylesheet" type="text/css" />
-    <title>Alec Bielanos | Web Developer</title>
+    <title>Alec Bielanos | Web Architect</title>
   </head>
   <body @vue:mounted="handleOnMount" class="loading">
     <div class="lds-ellipsis" aria-hidden="true">
@@ -36,7 +49,7 @@
       <nav title="Main">
         <ul>
           <li class="logo-lockup">
-            <span class="logo-text">Alec Bielanos | Web Developer</span>
+            <span class="logo-text">Alec Bielanos | Web Architect</span>
           </li>
         </ul>
         <button
@@ -288,8 +301,8 @@
               <header>
                 <img :src="i.image.src" :alt="i.image.alt" />
               </header>
-              <h4>{{i.title}}</h4>
-              <p>{{i.desc}}</p>
+              <h4 v-effect="$el.innerHTML = i.title"></h4>
+              <p v-effect="$el.innerHTML = i.desc"></p>
               <footer>
                 <template v-for="j in i.links">
                   <a

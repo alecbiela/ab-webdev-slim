@@ -33,7 +33,7 @@
     "title": "ConcreteCMS Model Viewer",
     "desc": "Adding a block to the ConcreteCMS editor which allows for the display and control of GLTF-based 3D models, utilizing Google&apos;s &lt;model-viewer&gt; web component.",
     "image": {
-      "src": "img/badge_3d.png",
+      "src": "img/modelviewer_thumb.jpg",
       "alt": "A box with rounded corners and the text 3D in the middle"
     },
     "links": [
@@ -48,7 +48,7 @@
     "title": "Website Source Code",
     "desc": "View the source code for this portfolio website, built using petite-vue and picoCSS.",
     "image": {
-      "src": "img/code_slash.jpg",
+      "src": "img/abwd_vue.jpg",
       "alt": "A code block icon with a slash through it"
     },
     "links": [
