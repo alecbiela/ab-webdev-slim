@@ -273,7 +273,11 @@
         <ul class="academic-work" v-if="store.content.academic_work">
           <template v-for="i in store.content.academic_work">
             <li class="academic-work-item">
-              <span>{{i.title}}<br /><small>{{i.subtitle}}</small></span>
+              <span
+                ><span v-effect="$el.innerHTML = i.title"></span><br /><small
+                  v-effect="$el.innerHTML = i.subtitle"
+                ></small
+              ></span>
               <div class="btn-group">
                 <template v-for="j in i.links">
                   <a

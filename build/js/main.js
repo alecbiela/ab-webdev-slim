@@ -24,22 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // )
 
     promises.push(
-      await asyncGetJSON('/content/generic.json').then(
+      await asyncGetJSON('./content/generic.json').then(
         (json) => (store.content.generic = json)
       )
     )
     promises.push(
-      await asyncGetJSON('/content/my_stack.json').then(
+      await asyncGetJSON('./content/my_stack.json').then(
         (json) => (store.content.my_stack = json)
       )
     )
     promises.push(
-      await asyncGetJSON('/content/academic_work.json').then(
+      await asyncGetJSON('./content/academic_work.json').then(
         (json) => (store.content.academic_work = json)
       )
     )
     promises.push(
-      await asyncGetJSON('/content/personal_projects.json').then(
+      await asyncGetJSON('./content/personal_projects.json').then(
         (json) => (store.content.personal_projects = json)
       )
     )
