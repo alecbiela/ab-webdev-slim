@@ -18,8 +18,8 @@ module.exports = function (grunt) {
         js: './js',
       },
       dest: {
-        css: '../css',
-        js: '../js',
+        css: '../deploy/css',
+        js: '../deploy/js',
       },
     },
     // Check that all JS files conform to our `.jshintrc` files
