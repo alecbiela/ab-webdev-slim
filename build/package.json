@@ -4,7 +4,8 @@
   "description": "Asset build tools for AB Webdev Slim Frontend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npx wrangler pages deploy ../deploy --project-name ab-web-dev"
   },
   "author": "Alec Bielanos",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
     "load-grunt-tasks": "^5.1.0",
-    "sass": "^1.77.2"
+    "sass": "^1.77.2",
+    "wrangler": "^3.67.0"
   }
 }
