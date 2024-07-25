@@ -1,0 +1,200 @@
+[
+  {
+    "title": "An Exploration of Learning Management System Usage Patterns by College-Level Learners",
+    "subtitle": "Final Research Project to complete M.S. Degree",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_LMS_System_Usage_College_Level_Learners.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View PDF"
+      }
+    ]
+  },
+  {
+    "title": "Designing Video Games for Education: A Meta-Analysis of Current and Future Efforts",
+    "subtitle": "Research performed for Interactive Courseware",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_Designing_Video_Games_for_Education.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View PDF"
+      }
+    ]
+  },
+  {
+    "title": "[Group] Heuristic Evaluation and Usability Testing",
+    "subtitle": "Research for a real-world client (MeetingMap)",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_MeetingMap_Final_Report.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View Final Report"
+      },
+      {
+        "type": "Video",
+        "link": "https://youtu.be/y8jWPSFUv64",
+        "icon": "icon-camera-video",
+        "tooltip": "Video Presentation"
+      }
+    ]
+  },
+  {
+    "title": "[Group] UI/UX Design for University Degree Tracking",
+    "subtitle": "Covers contextual inquiry, persona development, and iterative prototyping with user feedback",
+    "links": [
+      {
+        "type": "Website",
+        "link": "https://620-2201-group6.pages.dev/",
+        "icon": "icon-globe2",
+        "tooltip": "Project Website"
+      }
+    ]
+  },
+  {
+    "title": "Interactive Courseware: Mock LMS Module 1",
+    "subtitle": "Showcases Richard Mayer&apos;s Multimedia and Contiguity Principles",
+    "links": [
+      {
+        "type": "Website",
+        "link": "project/661p1/index.html",
+        "icon": "icon-globe2",
+        "tooltip": "View Module"
+      },
+      {
+        "type": "Documentation",
+        "link": "project/661p1/Bielanos_MockLMS1_Explanation.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "Documentation of Concepts"
+      }
+    ]
+  },
+  {
+    "title": "Interactive Courseware: Mock LMS Module 2",
+    "subtitle": "Showcases Richard Mayer&apos;s Modality, Redundance, and Coherence Principles",
+    "links": [
+      {
+        "type": "Website",
+        "link": "project/661p4/index.html",
+        "icon": "icon-globe2",
+        "tooltip": "View Module"
+      },
+      {
+        "type": "Documentation",
+        "link": "project/661p4/Bielanos_MockLMS2_Explanation.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "Documentation of Concepts"
+      }
+    ]
+  },
+  {
+    "title": "Interactive Courseware: Mock LMS Module 3",
+    "subtitle": "Showcases Richard Mayer&apos;s Personalization, Segmenting, and Pretraining Principles",
+    "links": [
+      {
+        "type": "Website",
+        "link": "project/661p3/index.html",
+        "icon": "icon-globe2",
+        "tooltip": "View Module"
+      },
+      {
+        "type": "Documentation",
+        "link": "project/661p3/Bielanos_MockLMS3_Explanation.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "Documentation of Concepts"
+      }
+    ]
+  },
+  {
+    "title": "Mock Instructional Course Design with Example Module",
+    "subtitle": "Example includes Problem Statement, Optimals/Actuals, Learning Objectives, and Formative Evaluation of Module.",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_Mock_ID_Curriculum_Module_FE.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View Design Doc"
+      }
+    ]
+  },
+  {
+    "title": "Geographic Information Systems: Data Transformations for Airport Impact",
+    "subtitle": "Utilizing the ArcGIS Geoprocessing Toolkit and Data Science to calculate airport impact across socioeconomic and environmental factors.",
+    "links": [
+      {
+        "type": "Website",
+        "link": "https://storymaps.arcgis.com/stories/9e6c93b33aa64fc3a15e33585e17e5ce",
+        "icon": "icon-globe2",
+        "tooltip": "View StoryMap"
+      }
+    ]
+  },
+  {
+    "title": "Evaluation of Emerging Technologies in Neurosurgical Education",
+    "subtitle": "Medical Informatics Research",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_Emerging_Technologies_Neuro_Education.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View PDF"
+      },
+      {
+        "type": "Video",
+        "link": "https://youtu.be/9N4JLSWpZwU",
+        "icon": "icon-camera-video",
+        "tooltip": "Video Presentation"
+      }
+    ]
+  },
+  {
+    "title": "Research Proposal: Evaluating Gamified e-Learning Experiences for Increases in Perceived Enjoyment",
+    "subtitle": "A Proposal for Future Research.",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_Evaluating_Gamified_eLearning_for_Enjoyment.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View PDF"
+      }
+    ]
+  },
+  {
+    "title": "[Group] Workplace Research: Attitudes Toward Hybrid Work and Its Effect on Productivity",
+    "subtitle": "A Qualitative Interview Study.",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_Attitudes_Toward_Work_Productivity.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View PDF"
+      }
+    ]
+  },
+  {
+    "title": "[Group] Workplace Research: Hybrid, Remote and On-site: An Analysis of Attitudes and Perceptions About Work Environments",
+    "subtitle": "A Quantitative Study using Surveys and Statistical Analysis.",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_Perceptions_of_Hybrid_Remote_Work.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View PDF"
+      }
+    ]
+  },
+  {
+    "title": "[Group] Workplace Research: Office Distractions &mdash; An Experimental Study to Determine if Auditory Noises Impact Task Performance",
+    "subtitle": "An Experimental Study and Related Statistical Analysis.",
+    "links": [
+      {
+        "type": "PDF",
+        "link": "project/Bielanos_Auditory_Distractions_Work_Performance.pdf",
+        "icon": "icon-file-earmark-richtext",
+        "tooltip": "View PDF"
+      }
+    ]
+  }
+]

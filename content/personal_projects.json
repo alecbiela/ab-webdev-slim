@@ -1,0 +1,107 @@
+[
+  {
+    "title": "RecipeGuru",
+    "desc": "[On the Horizon] Hate looking up recipes on your phone because of all the ads and SEO-Friendly filler you have to scroll past? I might be able to do something about that...",
+    "image": {
+      "src": "img/postcard.jpg",
+      "alt": "Drawing of a recipe card"
+    },
+    "links": [
+      {
+        "url": "#",
+        "text": "Coming Soon",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "title": "Bar 1354",
+    "desc": "[On the Horizon] Revolutionizing the Cocktail Bar menu for both patrons and bartenders/mixologists.",
+    "image": {
+      "src": "img/cup_straw.jpg",
+      "alt": "A drawing of a cup with a straw in it"
+    },
+    "links": [
+      {
+        "url": "#",
+        "text": "Coming Soon",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "title": "ConcreteCMS Model Viewer",
+    "desc": "Adding a block to the ConcreteCMS editor which allows for the display and control of GLTF-based 3D models, utilizing Google&apos;s &lt;model-viewer&gt; web component.",
+    "image": {
+      "src": "img/badge_3d.png",
+      "alt": "A box with rounded corners and the text 3D in the middle"
+    },
+    "links": [
+      {
+        "url": "https://bitbucket.org/alecbiela/ccms-model-viewer/src/main/",
+        "text": "View Source",
+        "icon": "icon-code-slash"
+      }
+    ]
+  },
+  {
+    "title": "Website Source Code",
+    "desc": "View the source code for this portfolio website, built using petite-vue and picoCSS.",
+    "image": {
+      "src": "img/code_slash.jpg",
+      "alt": "A code block icon with a slash through it"
+    },
+    "links": [
+      {
+        "url": "https://bitbucket.org/alecbiela/ab-webdev-slim/src/main/",
+        "text": "View Source",
+        "icon": "icon-code-slash"
+      }
+    ]
+  },
+  {
+    "title": "Concrete5 Legacy File Manager",
+    "desc": "A drop-in Dropzone.js replacement for the legacy Concrete5 File Manager (version &leq;5.6) to replace the Adobe Flash-based implementation.",
+    "image": {
+      "src": "img/c5fm_thumbnail.jpg",
+      "alt": "A screenshot of the Concrete5 Legacy File Manager with the package installed."
+    },
+    "links": [
+      {
+        "url": "https://bitbucket.org/alecbiela/c5_legacy_updated_file_manager/src/main/",
+        "text": "View Source",
+        "icon": "icon-code-slash"
+      }
+    ]
+  },
+  {
+    "title": "Chiropractic Marketing Website",
+    "desc": "A website for a Chiropractic practice located in Connecticut, built in WordPress.",
+    "image": {
+      "src": "img/bhct_thumbnail.jpg",
+      "alt": "A screenshot of the BetterHealthCT Marketing Website Homepage."
+    },
+    "links": [
+      {
+        "url": "https://betterhealthct.com",
+        "text": "View Website",
+        "icon": "icon-globe2"
+      }
+    ]
+  },
+  {
+    "title": "Xbox 360 Drum Controller USB Conversion",
+    "desc": "Converting a wireless Xbox 360 Rock Band Drum Controller to USB for use with PC.",
+    "image": {
+      "src": "img/xb360_thumbnail.jpg",
+      "alt": "A picture of the Xbox 360 Rock Band Drum Controller."
+    },
+    "links": [
+      {
+        "url": "https://bitbucket.org/alecbiela/x360-rb2-drumset/src/master/",
+        "text": "View Code",
+        "icon": "icon-code-slash"
+      }
+    ]
+  }
+]
