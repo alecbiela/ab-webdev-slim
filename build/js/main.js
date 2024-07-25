@@ -2,7 +2,7 @@ import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
 // import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 // import DOMPurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.mjs'
 
-window.onload = (() => {
+document.addEventListener('DOMContentLoaded', () => {
   'use strict'
 
   // Converts strings from snake case to title case
@@ -19,7 +19,9 @@ window.onload = (() => {
   const store = reactive({
     count: 0,
     navOpen: false,
-    content: {},
+    content: {
+      generic: { hero_rotator: [], about: { heading: '', body: '' } },
+    },
     util: { getTitleCase },
   })
 
@@ -69,6 +71,12 @@ window.onload = (() => {
     //     (text) => (store.content.about = text)
     //   )
     // )
+
+    promises.push(
+      await asyncGetJSON('/content/generic.json').then(
+        (json) => (store.content.generic = json)
+      )
+    )
     promises.push(
       await asyncGetJSON('/content/my_stack.json').then(
         (json) => (store.content.my_stack = json)
@@ -146,4 +154,4 @@ window.onload = (() => {
     handleSocialLinks,
     handleOnMount,
   }).mount()
-})()
+})

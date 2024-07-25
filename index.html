@@ -63,10 +63,10 @@
         <h1>
           <span>Innovating the next generation of</span>
           <span class="rotator">
-            <span class="slot1">interaction.</span>
-            <span class="slot2">what&apos;s possible.</span>
-            <span class="slot3">user experience.</span>
-            <span class="slot4">eLearning.</span>
+            <span class="slot1">{{store.content.generic.hero_rotator[2]}}</span>
+            <span class="slot2">{{store.content.generic.hero_rotator[3]}}</span>
+            <span class="slot3">{{store.content.generic.hero_rotator[0]}}</span>
+            <span class="slot4">{{store.content.generic.hero_rotator[1]}}</span>
           </span>
         </h1>
       </div>
@@ -78,30 +78,13 @@
             alt="An image of Alec"
           />
         </div>
-        <!-- <div
-          v-effect="$el.innerHTML = store.content.about"
-          class="about-text-wrapper"
-        > -->
         <div class="about-text-wrapper">
-          <h2>Hi, I&apos;m Alec!</h2>
-          <p>
-            I&apos;m a seasoned full-stack web developer and recent
-            Master&apos;s graduate experienced with working in interdisciplinary
-            teams &mdash; most often, my role requires translating business and
-            functional requirements into product features and then
-            designing/developing them (or both!). My previous work experience
-            and education has allowed me to develop strong communication and
-            organizational skills which are so often required in fast-paced
-            environments.
-          </p>
-          <p>
-            My academic and personal portfolios span multiple technologies and
-            industries. From websites to research, health informatics to
-            geographic imaging, nothing is really &apos;off the table&apos; for
-            what I&apos;m interested in. I like to remain somewhat
-            technology-agnostic; as a proactive self-starter I&apos;m open to
-            learning new technologies and adapting to them quickly.
-          </p>
+          <h2
+            v-effect="$el.innerHTML = store.content.generic.about.heading"
+          ></h2>
+          <div
+            v-effect="$el.innerHTML = store.content.generic.about.body"
+          ></div>
         </div>
       </div>
       <div id="section_resume" class="container resume">
