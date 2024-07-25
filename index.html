@@ -310,6 +310,7 @@
                     :href="j.url"
                     class="button project-button"
                     target="_blank"
+                    v-effect="j.url ? null : $el.setAttribute('disabled', true)"
                     ><i :class="j.icon" aria-hidden="true"></i
                     >&nbsp;{{j.text}}</a
                   >

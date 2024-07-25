@@ -59,13 +59,13 @@
     "links": [
       {
         "type": "Website",
-        "link": "project/661p1/index.html",
+        "link": "https://661p1.ab-web.dev",
         "icon": "icon-globe2",
         "tooltip": "View Module"
       },
       {
         "type": "Documentation",
-        "link": "project/661p1/Bielanos_MockLMS1_Explanation.pdf",
+        "link": "https://661p1.ab-web.dev/Bielanos_MockLMS1_Explanation.pdf",
         "icon": "icon-file-earmark-richtext",
         "tooltip": "Documentation of Concepts"
       }
@@ -77,13 +77,13 @@
     "links": [
       {
         "type": "Website",
-        "link": "project/661p4/index.html",
+        "link": "https://661p4.ab-web.dev",
         "icon": "icon-globe2",
         "tooltip": "View Module"
       },
       {
         "type": "Documentation",
-        "link": "project/661p4/Bielanos_MockLMS2_Explanation.pdf",
+        "link": "https://661p4.ab-web.dev/Bielanos_MockLMS2_Explanation.pdf",
         "icon": "icon-file-earmark-richtext",
         "tooltip": "Documentation of Concepts"
       }
@@ -95,13 +95,13 @@
     "links": [
       {
         "type": "Website",
-        "link": "project/661p3/index.html",
+        "link": "https://661p3.ab-web.dev",
         "icon": "icon-globe2",
         "tooltip": "View Module"
       },
       {
         "type": "Documentation",
-        "link": "project/661p3/Bielanos_MockLMS3_Explanation.pdf",
+        "link": "https://661p3.ab-web.dev/Bielanos_MockLMS3_Explanation.pdf",
         "icon": "icon-file-earmark-richtext",
         "tooltip": "Documentation of Concepts"
       }
