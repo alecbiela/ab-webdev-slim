@@ -70,9 +70,13 @@ module.exports = function (grunt) {
         mangle: true,
         sourceMap: false, //change to true for dev
       },
-      target: {
+      main_js: {
         src: ['<%= dirs.src.js %>/main.js'],
         dest: '<%= dirs.dest.js %>/main.min.js',
+      },
+      util_js: {
+        src: ['<%= dirs.src.js %>/util.js'],
+        dest: '<%= dirs.dest.js %>/util.min.js',
       },
     },
     // Trigger relevant tasks when the files they watch has been changed
@@ -96,7 +100,7 @@ module.exports = function (grunt) {
   })
 
   // Setup build tasks aliases
-  grunt.registerTask('build-js', ['jshint', 'uglify'])
+  grunt.registerTask('build-js', ['jshint', 'uglify:main_js', 'uglify:util_js'])
   grunt.registerTask('build-css', ['sass', 'cssmin'])
   grunt.registerTask('build', ['build-js', 'build-css'])
 

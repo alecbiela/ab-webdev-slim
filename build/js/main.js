@@ -1,23 +1,11 @@
 import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
-// import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
-// import DOMPurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.mjs'
+import { getTitleCase, asyncGetJSON, smoothScroll } from './util.min.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict'
 
-  // Converts strings from snake case to title case
-  const getTitleCase = (str) => {
-    return str
-      .match(
-        /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
-      )
-      .map((x) => x.slice(0, 1).toUpperCase() + x.slice(1))
-      .join(' ')
-  }
-
   // Global store for the entire page
   const store = reactive({
-    count: 0,
     navOpen: false,
     content: {
       generic: { hero_rotator: [], about: { heading: '', body: '' } },
@@ -25,45 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     util: { getTitleCase },
   })
 
-  // Load up all the content from the markdown files
-  // const asyncGetMarkdown = async (url) => {
-  //   try {
-  //     const res = await fetch(url, {
-  //       headers: {
-  //         'Content-Type': 'text/plain',
-  //       },
-  //     })
-  //     if (!res.ok) {
-  //       throw new Error(
-  //         `Getting content failed at URL ${url} with error status ${res.status}`
-  //       )
-  //     }
-  //     const text = await res.text()
-  //     return DOMPurify.sanitize(marked(text))
-  //   } catch (error) {
-  //     console.error(error.message)
-  //   }
-  // }
-
-  // Load up all the content from the markdown files
-  const asyncGetJSON = async (url) => {
-    try {
-      const res = await fetch(url, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      if (!res.ok) {
-        throw new Error(
-          `Getting JSON failed at URL ${url} with error status ${res.status}`
-        )
-      }
-      return await res.json()
-    } catch (error) {
-      console.error(error.message)
-    }
-  }
-
+  // Handles loading page content
+  // Uses Promise.all() to remove the loading overlay once content is loaded
   const loadContent = async () => {
     let promises = []
     // promises.push(
@@ -95,27 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     Promise.all(promises).then(() => document.body.classList.remove('loading'))
   }
 
-  // Set up smooth scrolling on all anchor links
-  const smoothScroll = () => {
-    let x = document.querySelectorAll('a[href*="#"]')
-    for (let i = 0; i < x.length; i++) {
-      x[i].onclick = (e) => {
-        e.preventDefault()
-        const ele = document.querySelector(e.target.hash)
-        window.scrollTo({
-          top: ele.offsetTop - 90,
-          left: 0,
-          behavior: 'smooth',
-        })
-        document
-          .getElementById('nav_toggle')
-          .setAttribute('aria-expanded', 'false')
-        ele.focus()
-        return false
-      }
-    }
-  }
-
   // Main initialization logic, runs when petite-vue gets mounted
   const handleOnMount = () => {
     //set honeypot
@@ -128,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadContent()
   }
 
-  // Form submit for social links
+  // Handle clicking on the social links in the contact callout
+  // Prevents link scraping and allows for honeypot usage
   const handleSocialLinks = (e) => {
     if (document.getElementById('hhpp').value === 'check') {
       switch (e.submitter.id) {
@@ -149,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   createApp({
-    // share it with app scopes
+    // Share this info with the app scope (in this case, the whole page)
     store,
     handleSocialLinks,
     handleOnMount,
