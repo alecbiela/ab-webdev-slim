@@ -10,6 +10,13 @@
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
 import DOMPurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.mjs'
 
+// An event to emit that updates the navigation state to closed (used in main.js)
+const navClosed = new CustomEvent('navigation-closed', {
+  bubbles: true,
+  cancelable: true,
+  detail: 'The navigation was closed.',
+})
+
 // Converts strings from snake case to title case
 const getTitleCase = (str) => {
   return str
@@ -69,9 +76,7 @@ const smoothScroll = () => {
         left: 0,
         behavior: 'smooth',
       })
-      document
-        .getElementById('nav_toggle')
-        .setAttribute('aria-expanded', 'false')
+      document.dispatchEvent(navClosed)
       ele.focus()
       return false
     }

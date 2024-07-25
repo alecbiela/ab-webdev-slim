@@ -56,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //get page content
     loadContent()
+
+    //close the nav when the anchor links smooth-scroll
+    document.addEventListener(
+      'navigation-closed',
+      () => (store.navOpen = false)
+    )
   }
 
   // Handle clicking on the social links in the contact callout
