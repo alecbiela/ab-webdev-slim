@@ -24,24 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // )
 
     promises.push(
-      await asyncGetJSON('./content/generic.json').then(
+      await asyncGetJSON('https://files.ab-web.dev/json/generic.json').then(
         (json) => (store.content.generic = json)
       )
     )
     promises.push(
-      await asyncGetJSON('./content/my_stack.json').then(
+      await asyncGetJSON('/content/my_stack').then(
         (json) => (store.content.my_stack = json)
       )
     )
     promises.push(
-      await asyncGetJSON('./content/academic_work.json').then(
-        (json) => (store.content.academic_work = json)
-      )
+      await asyncGetJSON(
+        'https://files.ab-web.dev/json/academic_work.json'
+      ).then((json) => (store.content.academic_work = json))
     )
     promises.push(
-      await asyncGetJSON('./content/personal_projects.json').then(
-        (json) => (store.content.personal_projects = json)
-      )
+      await asyncGetJSON(
+        'https://files.ab-web.dev/json/personal_projects.json'
+      ).then((json) => (store.content.personal_projects = json))
     )
     Promise.all(promises).then(() => document.body.classList.remove('loading'))
   }

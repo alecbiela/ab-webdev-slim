@@ -4,8 +4,10 @@
   "description": "Asset build tools for AB Webdev Slim Frontend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npx wrangler pages deploy ../deploy --project-name ab-web-dev"
+    "deploy": "npx wrangler pages deploy",
+    "preview": "npx wrangler pages deploy --branch preview",
+    "dev": "npx wrangler pages dev ../deploy",
+    "refresh-d1": "npx wrangler d1 export --remote --output=./.wrangler/tmp/db-export.sql && npx wrangler d1 execute --local --file=./.wrangler/tmp/db-export.sql"
   },
   "author": "Alec Bielanos",
   "license": "ISC",

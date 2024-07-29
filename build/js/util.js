@@ -48,11 +48,14 @@ const asyncGetMarkdown = async (url) => {
 // Load up all the content from the markdown files
 const asyncGetJSON = async (url) => {
   try {
-    const res = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    // const res = await fetch(url, {
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   mode: 'no-cors',
+    //   method: 'GET',
+    // })
+    const res = await fetch(url)
     if (!res.ok) {
       throw new Error(
         `Getting JSON failed at URL ${url} with error status ${res.status}`
