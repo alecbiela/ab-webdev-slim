@@ -1,5 +1,6 @@
 @use 'reset';
 @use '../fontello.css';
+@use '../aos.css';
 @use './pico/pico';
 @use 'typography';
 @use 'loading';
@@ -189,6 +190,8 @@ body {
     width: 100vw;
     z-index: 10;
     background-color: var(--pico-card-background-color);
+    border-bottom: 1px solid black;
+    filter: drop-shadow(0 0 5px black);
 
     nav {
       height: 100%;
@@ -342,22 +345,25 @@ body {
 }
 
 .about {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
+  background: var(--pico-card-background-color);
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 
-  .about-image-wrapper {
-    img {
-      border-radius: 50%;
-      max-width: 396px;
+    .about-image-wrapper {
+      img {
+        border-radius: 50%;
+        max-width: 396px;
+      }
+      flex: 1 0 33%;
     }
-    flex: 1 0 33%;
-  }
-  .about-text-wrapper {
-    max-width: 80ch;
-    padding: 40px 5%;
+    .about-text-wrapper {
+      max-width: 80ch;
+      padding: 40px 5%;
+    }
   }
 }
 

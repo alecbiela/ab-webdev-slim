@@ -22,5 +22,8 @@
     "load-grunt-tasks": "^5.1.0",
     "sass": "^1.77.2",
     "wrangler": "^3.67.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4"
   }
 }

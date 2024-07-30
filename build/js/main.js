@@ -65,6 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
       'navigation-closed',
       () => (store.navOpen = false)
     )
+
+    document.dispatchEvent(
+      new CustomEvent('vue-mounted', {
+        bubbles: false,
+        cancelable: true,
+        detail: 'Petite-Vue has finished mounting.',
+      })
+    )
   }
 
   // Handle clicking on the social links in the contact callout

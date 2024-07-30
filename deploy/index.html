@@ -86,21 +86,23 @@
           </span>
         </h1>
       </div>
-      <div id="section_about" class="container about">
-        <div class="about-image-wrapper">
-          <img
-            class="headshot"
-            src="https://files.ab-web.dev/img/headshot_feb24.jpg"
-            alt="An image of Alec"
-          />
-        </div>
-        <div class="about-text-wrapper">
-          <h2
-            v-effect="$el.innerHTML = store.content.generic.about.heading"
-          ></h2>
-          <div
-            v-effect="$el.innerHTML = store.content.generic.about.body"
-          ></div>
+      <div id="section_about" class="about">
+        <div class="container">
+          <div class="about-image-wrapper" data-aos="fade-right">
+            <img
+              class="headshot"
+              src="https://files.ab-web.dev/img/headshot_feb24.jpg"
+              alt="An image of Alec"
+            />
+          </div>
+          <div class="about-text-wrapper" data-aos="fade-left">
+            <h2
+              v-effect="$el.innerHTML = store.content.generic.about.heading"
+            ></h2>
+            <div
+              v-effect="$el.innerHTML = store.content.generic.about.body"
+            ></div>
+          </div>
         </div>
       </div>
       <div id="section_resume" class="container resume">
@@ -123,7 +125,7 @@
         </ul>
         <div class="stack-grid">
           <template v-for="(i, key) in store.content.my_stack">
-            <article class="stack-card">
+            <article class="stack-card" data-aos="zoom-in">
               <header>{{ store.util.getTitleCase(key) }}</header>
               <ul v-if="i.proficient">
                 <template v-for="j in i.proficient">
@@ -167,11 +169,11 @@
         </p>
         <h3 class="sr">Experience</h3>
         <div class="experience-wrapper">
-          <div class="workplace">
+          <div class="workplace" data-aos="fade-right">
             <h4>The WORX Group, LLC</h4>
             <p>Prospect, CT</p>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <h5>Developer</h5>
             <p class="work-time">January 2019 &mdash; July 2021</p>
             <ul>
@@ -228,11 +230,11 @@
               </li>
             </ul>
           </div>
-          <div class="workplace">
+          <div class="workplace" data-aos="fade-right">
             <h4>iD Tech Camps</h4>
             <p>Danbury, CT</p>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <h5>Instructor</h5>
             <p class="work-time">June 2016 &mdash; August 2016</p>
             <ul>
@@ -275,7 +277,11 @@
         <h4>Academic Work</h4>
         <ul class="academic-work" v-if="store.content.academic_work">
           <template v-for="i in store.content.academic_work">
-            <li class="academic-work-item">
+            <li
+              class="academic-work-item"
+              data-aos="fade-up"
+              data-aos-duration="550"
+            >
               <span
                 ><span v-effect="$el.innerHTML = i.title"></span><br /><small
                   v-effect="$el.innerHTML = i.subtitle"
@@ -304,7 +310,7 @@
         <h3 id="section_projects">Personal Projects</h3>
         <div class="projects-grid">
           <template v-for="i in store.content.personal_projects">
-            <article class="project-wrapper">
+            <article class="project-wrapper" data-aos="zoom-in">
               <header>
                 <img :src="i.image.src" :alt="i.image.alt" />
               </header>
@@ -374,9 +380,20 @@
     </main>
     <footer>
       <div class="container">
-        <p>Copyright &copy; 2024 Alec Bielanos.</p>
+        <p>
+          Copyright &copy; 2024 Alec Bielanos. Made with love; hosted on the
+          edge.
+        </p>
       </div>
     </footer>
     <script src="./js/main.min.js" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        disable: 'mobile',
+        duration: 800,
+        startEvent: 'vue-mounted',
+      })
+    </script>
   </body>
 </html>

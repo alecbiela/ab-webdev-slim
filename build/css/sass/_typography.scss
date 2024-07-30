@@ -7,6 +7,7 @@
   --button-background: #07a;
   --button-text: #fff;
   --button-active-background: #333;
+  --pico-card-box-shadow: none;
 }
 
 html {
@@ -84,6 +85,10 @@ a[data-tooltip] {
     --pico-tooltip-slide-to: translate(0, -0.25rem);
     transform: translate(0, 0.75rem);
   }
+}
+
+article {
+  filter: drop-shadow(#080515 0 2px 25px);
 }
 
 @media only screen and (max-width: 767px) {
