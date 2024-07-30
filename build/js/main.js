@@ -1,4 +1,7 @@
-import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
+import {
+  createApp,
+  reactive,
+} from 'https://unpkg.com/petite-vue@0.4.1/dist/petite-vue.es.js'
 import { getTitleCase, asyncGetJSON, smoothScroll } from './util.min.js'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
       )
     )
     promises.push(
-      await asyncGetJSON(
-        'https://files.ab-web.dev/json/academic_work.json'
-      ).then((json) => (store.content.academic_work = json))
+      await asyncGetJSON('/content/academic_work').then(
+        (json) => (store.content.academic_work = json)
+      )
     )
     promises.push(
       await asyncGetJSON(
