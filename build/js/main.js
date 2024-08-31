@@ -87,10 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.open('https://www.linkedin.com/in/alec-bielanos/', '_blank')
           break
         case 'bt_gh':
-          window.open(
-            'https://bitbucket.org/alecbiela/workspace/repositories/',
-            '_blank'
-          )
+          window.open('https://github.com/alecbiela/', '_blank')
           break
       }
     }

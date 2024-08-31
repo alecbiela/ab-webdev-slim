@@ -7,8 +7,8 @@
 
 'use strict'
 
-import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
-import DOMPurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.mjs'
+// import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'
+// import DOMPurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.mjs'
 
 // An event to emit that updates the navigation state to closed (used in main.js)
 const navClosed = new CustomEvent('navigation-closed', {
@@ -26,35 +26,28 @@ const getTitleCase = (str) => {
 }
 
 // Load up all the content from the markdown files
-const asyncGetMarkdown = async (url) => {
-  try {
-    const res = await fetch(url, {
-      headers: {
-        'Content-Type': 'text/plain',
-      },
-    })
-    if (!res.ok) {
-      throw new Error(
-        `Getting content failed at URL ${url} with error status ${res.status}`
-      )
-    }
-    const text = await res.text()
-    return DOMPurify.sanitize(marked(text))
-  } catch (error) {
-    console.error(error.message)
-  }
-}
+// const asyncGetMarkdown = async (url) => {
+//   try {
+//     const res = await fetch(url, {
+//       headers: {
+//         'Content-Type': 'text/plain',
+//       },
+//     })
+//     if (!res.ok) {
+//       throw new Error(
+//         `Getting content failed at URL ${url} with error status ${res.status}`
+//       )
+//     }
+//     const text = await res.text()
+//     return DOMPurify.sanitize(marked(text))
+//   } catch (error) {
+//     console.error(error.message)
+//   }
+// }
 
-// Load up all the content from the markdown files
+// Load up all the content from the json files
 const asyncGetJSON = async (url) => {
   try {
-    // const res = await fetch(url, {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   mode: 'no-cors',
-    //   method: 'GET',
-    // })
     const res = await fetch(url)
     if (!res.ok) {
       throw new Error(
@@ -86,4 +79,5 @@ const smoothScroll = () => {
   }
 }
 
-export { getTitleCase, asyncGetJSON, asyncGetMarkdown, smoothScroll }
+export { getTitleCase, asyncGetJSON, smoothScroll }
+// export { getTitleCase, asyncGetJSON, asyncGetMarkdown, smoothScroll }
