@@ -357,6 +357,7 @@ body {
       img {
         border-radius: 50%;
         max-width: 396px;
+        width: 100%;
       }
       flex: 1 0 33%;
     }
@@ -541,7 +542,7 @@ footer p {
     text-align: center;
   }
 
-  .about {
+  .about > .container {
     flex-wrap: wrap;
   }
   .about-image-wrapper {
